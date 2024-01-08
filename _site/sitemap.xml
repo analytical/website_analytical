@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.quarto.org/test2.html</loc>
-    <lastmod>2024-01-08T16:02:12.635Z</lastmod>
+    <lastmod>2024-01-08T16:17:17.996Z</lastmod>
   </url>
   <url>
-    <loc>https://www.quarto.org/posts/post_2/post2.html</loc>
-    <lastmod>2024-01-08T16:02:08.349Z</lastmod>
+    <loc>https://www.quarto.org/post/post_2/post2.html</loc>
+    <lastmod>2024-01-08T16:17:14.044Z</lastmod>
   </url>
   <url>
-    <loc>https://www.quarto.org/index.html</loc>
-    <lastmod>2024-01-08T16:02:04.810Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.quarto.org/about.html</loc>
-    <lastmod>2024-01-08T16:02:03.941Z</lastmod>
+    <loc>https://www.quarto.org/post/incertidumbre-de-una-calibracion-no-lineal/index.html</loc>
+    <lastmod>2024-01-08T16:17:10.268Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/blog.html</loc>
-    <lastmod>2024-01-08T16:02:18.129Z</lastmod>
+    <lastmod>2024-01-08T16:17:24.199Z</lastmod>
   </url>
   <url>
-    <loc>https://www.quarto.org/posts/post_1/index.html</loc>
-    <lastmod>2024-01-08T16:02:06.735Z</lastmod>
+    <loc>https://www.quarto.org/about.html</loc>
+    <lastmod>2024-01-08T16:17:00.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/index.html</loc>
+    <lastmod>2024-01-08T16:17:01.577Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/post/post_1/index.html</loc>
+    <lastmod>2024-01-08T16:17:12.259Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/talks.html</loc>
-    <lastmod>2024-01-08T16:02:10.874Z</lastmod>
+    <lastmod>2024-01-08T16:17:16.405Z</lastmod>
   </url>
 </urlset>
