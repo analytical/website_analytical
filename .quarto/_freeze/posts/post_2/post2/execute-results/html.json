@@ -1,0 +1,16 @@
+{
+  "hash": "18de819738927d2ec86bc8377e295234",
+  "result": {
+    "markdown": "---\ntitle: \"post 2\"\n---\n\n\n# Las posibilidades\n\n$$y = \\beta_{0} + \\beta_{1}x$$\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(rnorm(1000))\n```\n\n::: {.cell-output-display}\n![](post2_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "post2_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

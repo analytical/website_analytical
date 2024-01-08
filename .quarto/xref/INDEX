@@ -4,5 +4,23 @@
   },
   "index.qmd": {
     "index.html": "ac44d3db"
+  },
+  "talks.qmd": {
+    "talks.html": "9c6ed02a"
+  },
+  "test2.qmd": {
+    "test2.html": "af61942c"
+  },
+  "404.qmd": {
+    "404.html": "0ecb6072"
+  },
+  "posts/post_1/post1.qmd": {
+    "post1.html": "1979bd10"
+  },
+  "blog.qmd": {
+    "blog.html": "c90d197f"
+  },
+  "posts/post_2/post2.qmd": {
+    "post2.html": "fdb73e0e"
   }
 }
