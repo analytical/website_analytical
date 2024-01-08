@@ -4,7 +4,7 @@ image: logo_analytical.png
 toc: false
 about:
   template: trestles
-  image-width: "400px"
+  image-width: "700px"
   links:
     - icon: linkedin
       text: LinkeIn

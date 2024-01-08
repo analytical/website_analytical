@@ -1,0 +1,47 @@
+---
+title: "Herramientas de Diseño e Interpretación Estadística de las Mediciones"
+description: "Facultad de Ciencias Químicas y Farmacéuticas | Universidad de Chile <br> **AGOSTO 2024**"
+image: daio.png
+title-block-banner: true
+---
+
+# Objetivo
+El objetivo de este curso es entregar conocimientos para la aplicación de 
+herramientas estadísticas **modernas**, que permitan interpretar los resultados 
+analíticos desde el punto de vista estadístico y metrológico. 
+
+
+## ¿Qué estudiaremos?
+En este curso utilizamos extensivamente métodos de simulación en **lenguaje
+de programción R**, con el objetivo de entender los métodos estadísticos aplicados 
+en Química Analítica, sus alcances y suposiciones:
+
+- ¿Y si mis datos no son Normales?¿cómo los analizo?
+- Necesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo 
+obtengo?
+- ¿Cómo minimizar la incertidumbre de calibración?
+- Necesito comparar el desempeño de 5 analistas en la determinación de un 
+antibiótico en alimentos ¿cuál método estadístico debo aplicar?
+- ¿Cómo se interpreta correctamente un p-value?
+- Del 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al 
+método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la 
+precisión intermedia de los analistas?
+- Obtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar 
+que la curva de calibración es lineal?
+- ¿Cuál es la diferencia entre el r y r²?
+- ¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?
+- ¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la 
+verdadera media esté dentro del intervalo?
+- ¿Cómo comparo 2 métodos analíticos si los datos no son normales?
+
+Y otros tópicos de interés para profesionales de laboratorios de ensayos 
+físico-químicos y microbiológicos.
+
+
+<span style="color:#F74464;"><strong>Más información:</strong></span>
+
+
+
+
+[![](logo_uchile.png){width=20% height=20% fig-align="left"}](https://www.postgradoquimica.cl/curso-posgrado-herramientas-diseno-interpretacion-estadistica-mediciones-version-semipresencial-2/)
+

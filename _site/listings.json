@@ -1,5 +1,11 @@
 [
   {
+    "listing": "/cursos.html",
+    "items": [
+      "/cursos/DAIO_uchile/index.html"
+    ]
+  },
+  {
     "listing": "/blog.html",
     "items": [
       "/post/acreditados-inn-2023/index.html",
