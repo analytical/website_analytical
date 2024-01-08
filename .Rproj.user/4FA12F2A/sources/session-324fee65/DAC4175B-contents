@@ -1,0 +1,195 @@
+---
+title: ¿Cuántos laboratorios de ensayo acreditados por el INN hay en Chile? Versión 2023
+author: cgomez
+date: '2023-07-03'
+slug: acreditados-inn-2023
+categories: []
+tags: []
+subtitle: ''
+summary: 'Este post muestra el **paso a paso** del análisis estadístico en R, sobre los laboratorios de ensayos acreditados hasta julio de 2023'
+authors: []
+lastmod: '2023-07-03T11:16:37-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+Hace ya casi 2 años publiqué un [post](https://www.linkedin.com/posts/cjgomezs_acreditados-activity-6856380114675011584-7hnO?utm_source=share&utm_medium=member_desktop) acerca de cuántos laboratorios de ensayos acreditados existían en Chile el 2021. La publicación generó airadas reacciones, sin embargo, se abrió un interesante debate (esa es la idea).
+
+Es tiempo de actualizar ese análisis con los datos de 2023. En esta oportunidad llevaremos a cabo el 
+análisis paso a paso en `R` bajo el concepto de [*Reproducible Research*](https://esajournals.onlinelibrary.wiley.com/doi/10.1002/bes2.1801)
+
+**Nota: Considerar que algunas razones sociales podrían tener varios laboratorios/alcances
+acreditados, por lo tanto, este gráfico en realidad cuenta el número de acreditaciones.
+(¿Clickbait?)**
+
+La versión de este post es *semi-automática*, es decir, algunas operaciones serán 
+hechas *a mano*. Podríamos aplicar *web scraping* y bajar los datos directamente desde la página web del INN, pero eso qudará para otro post (lo intuye bien querid@ lector@... cuando yo aprenda a hacerlo.)
+
+## ¿Dónde están los datos de laboratorios acreditados por el INN?
+
+Bueno, lo primero es dirigirnos al siguiente link para bajar los datos desde la
+página del INN (son datos públicos por si acaso):
+
+[Directorio de Acreditados](https://acreditacion.innonline.cl/)
+
+![](acreditados.png)
+
+En el campo *Tipo de ESquema de Acreditación* seleccionamos *Laboratorios de ensayo*:
+
+
+![](acreditados2.png)
+
+Presionamos *Buscar* y obtenderemos el listado completo (incluyendo los laboratorios suspendidos):
+
+![](acreditados3.png)
+
+Lamentablemente, el sitio no tiene ninguna opción para bajar los datos en Excel u
+otro formato, así que tendremos que hacerlo a la antigua:
+
+1. Botón derecho y se abrirá el siguiente menú:
+
+![](acreditados4.png)
+
+
+2. Elija *Guardar Como* y en tipo seleccione *Página web (completa)* y guárdelo
+con el nombre *acreditados.html* (el nombre da igual)
+
+![](acreditados5.png)
+
+Listo, hemos bajado los datos y ahora debemos *limpiarlos* ya que incluso se 
+descargaron los íconos de los certificado en pdf. Tenemos que dejar la tabla 
+limpia para el análisis en `R` (o para cualquier otro software)
+
+## Limpieza de la base de datos en Excel
+
+Haremos la limpieza de datos en Excel. 
+
+1. Abra Excel 
+2. Ahora abra el archivo archivados.html que guardó (sí, Excel puede abrir este tipo de archivos) y obtendrá algo similar a esto:
+
+![](acreditados6.png)
+
+El objetivo es llegar a una hoja de Excel plana:
+
+![](acreditados7.png)
+
+3. Seleccionemos todos los datos inlcuyendo los encabezados de las columnas 
+(N, N Certi, etc), copiar y pegar en una **nueva hoja** sólo como datos, es decir,
+nos ubicamos en la celda A1 de la hoja nueva, presionamos botón derecho y seleccionamos
+`Valores (V)`:
+
+![](index.es_insertimage_2.png)
+
+Y obtendremos lo siguiente:
+
+![](index.es_insertimage_3.png)
+
+4. Eliminamos la columna B:
+
+![](index.es_insertimage_4.png)
+
+5. Hemos obtenido la tabla que buscábamos:
+
+![](index.es_insertimage_5.png)
+
+6. Lo único que nos falta es modificar un poco los encabezados para eliminar
+acentos, espacios en blanco, etc. Para que Ud. pueda reproducir este análisis
+cambie los encabezados por los siguientes:
+
+![](index.es_insertimage_6.png)
+
+7. ¡Listo! hemos *limpiado* la base de datos, la cual debe lucir más o menos así 
+en el Excel:
+
+![](index.es_insertimage_7.png)
+
+8. Cambiemos el nombre la hoja a `datos`:
+
+![](index.es_insertimage_8.png)
+
+9. Por último guardar el libro Excel con el nombre `acreditados.xlsx`
+
+
+## Análisis estadístico en `R`
+
+Abrimos el software RStudio y generamos un nuevo script:
+
+![](index.es_insertimage_9.png)
+
+Guardamos el script con el nombre `acreditados.R` en el **mismo directorio**
+que guardamos la base de datos limpia `acreditados.xlsx`
+
+Los siguientes comandos importan la base de datos del INN desde el Excel hasta `R`:
+
+```{r, echo = T}
+library(readxl)
+acreditados <- read_excel('acreditados.xlsx', sheet = 'datos')
+
+```
+
+La importación ha sido exitosa si observa la siguiente tabla con el comando `head()`
+
+```{r}
+head(acreditados)
+```
+
+Ahora haremos el gráfico de barras el cual indica el número de laboratorios de 
+ensayo acreditados por el INN al 03 de julio de 2023 clasificados por `Area`.
+Por una cuestión de espacios sólo se muestran aquellas áreas con más de 10 laboratorios acreditados:
+
+
+```{r, message = F, warning=F, fig.width=12, fig.height=7}
+library(tidyverse)
+library(readxl)
+library(ggplot2)
+library(magrittr)
+
+acreditados <- read_excel('acreditados.xlsx', sheet = 'datos')
+
+tabla <- acreditados %>% 
+  group_by(Area) %>% 
+  summarise(n = n())
+
+# Número de acreditaciones suspendidas
+n.suspendidos <- acreditados %>% 
+  filter(!is.na(Observaciones)) %>% 
+  count()
+
+# Número de acreditaciones totales (incluyendo las suspendidas)
+n.total <- acreditados %>% 
+  count()
+
+
+ggplot(tabla %>% filter(n >= 10), aes(x = reorder(Area, n), y = n, label = n)) +
+  geom_bar(stat = "identity", fill = 'blue', alpha = 0.7) +
+  ylab('N° de laboratorios de ensayo') +
+  xlab('Área') +
+  labs(title = paste('Acreditaciones en Chile por INN bajo ISO 17025 por área N =', 
+                     n.total),
+       subtitle = paste("Incluye ", n.suspendidos, "suspendidos. Sólo se muestran n > 10"),
+       caption = "Fuente: https://acreditacion.innonline.cl/") +
+  theme_bw() +
+  geom_text(size=5,hjust=1.5, col = 'white') +
+  coord_flip()
+
+```
+
+
+¡Listo!
+En un siguiente paso podríamos desagregar por *Organización*, de tal manera de 
+atribuir las acreditaciones clasificando por razón social ¿Le parece estimad@ lector@?
+
+Saludos
+
+
+
+
+

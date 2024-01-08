@@ -55,5 +55,20 @@
   },
   "post/mis-datos-no-son-normales/index.qmd": {
     "index.html": "1fa1c309"
+  },
+  "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.qmd": {
+    "index.html": "4890d594"
+  },
+  "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo-parte2/index.qmd": {
+    "index.html": "cf321566"
+  },
+  "post/prueba-de-linealidad-de-una-curva-de-calibracion-en-excel/index.qmd": {
+    "index.html": "c963674e"
+  },
+  "post/acreditados-inn-2023/index.qmd": {
+    "index.html": "6fac84ac"
+  },
+  "post/como-detectar-efecto-matriz-metodo-analitico/index.qmd": {
+    "index.html": "bb06e1b4"
   }
 }
