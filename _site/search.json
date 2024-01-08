@@ -4,21 +4,35 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.01983454"
+    "text": "mean(rnorm(100))\n\n[1] 0.1130804"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.01983454"
+    "text": "mean(rnorm(100))\n\n[1] 0.1130804"
   },
   {
-    "objectID": "post/post_2/post2.html",
-    "href": "post/post_2/post2.html",
+    "objectID": "posts/post_2/post2.html",
+    "href": "posts/post_2/post2.html",
     "title": "post 2",
     "section": "",
     "text": "Las posibilidades\n\\[y = \\beta_{0} + \\beta_{1}x\\]\n\nplot(rnorm(1000))\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "post 2\n\n\n\n\n\n\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "index.html",
@@ -40,34 +54,6 @@
     "title": "Analytical",
     "section": "Experience",
     "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Spet 2012 - April 2018"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "post 1\n\n\n\n\n\nEn el siguiente nivel podemos\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\npost 2\n\n\n\n\n\n\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "post/post_1/post1.html",
-    "href": "post/post_1/post1.html",
-    "title": "post 1",
-    "section": "",
-    "text": "hist(rnorm(1000))\n\n\n\n\n\n\n\n\n\nmean(35)\n\n[1] 35"
-  },
-  {
-    "objectID": "post/post_1/post1.html#comprobado",
-    "href": "post/post_1/post1.html#comprobado",
-    "title": "post 1",
-    "section": "",
-    "text": "mean(35)\n\n[1] 35"
   },
   {
     "objectID": "talks.html",
