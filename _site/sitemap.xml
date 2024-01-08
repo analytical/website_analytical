@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.quarto.org/test2.html</loc>
-    <lastmod>2024-01-08T15:42:40.290Z</lastmod>
+    <lastmod>2024-01-08T15:45:44.564Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/posts/post_2/post2.html</loc>
-    <lastmod>2024-01-08T15:42:36.642Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.quarto.org/blog.html</loc>
-    <lastmod>2024-01-08T15:42:50.452Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.quarto.org/about.html</loc>
-    <lastmod>2024-01-08T15:42:34.159Z</lastmod>
+    <lastmod>2024-01-08T15:45:40.850Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/index.html</loc>
-    <lastmod>2024-01-08T15:42:35.036Z</lastmod>
+    <lastmod>2024-01-08T15:45:37.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/about.html</loc>
+    <lastmod>2024-01-08T15:45:36.201Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/blog.html</loc>
+    <lastmod>2024-01-08T15:45:52.916Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/posts/post_1/post1.html</loc>
+    <lastmod>2024-01-08T15:45:55.525Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/talks.html</loc>
-    <lastmod>2024-01-08T15:42:38.783Z</lastmod>
+    <lastmod>2024-01-08T15:45:43.037Z</lastmod>
   </url>
 </urlset>
