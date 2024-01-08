@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.01390459"
+    "text": "mean(rnorm(100))\n\n[1] -0.2627414"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.01390459"
+    "text": "mean(rnorm(100))\n\n[1] -0.2627414"
   },
   {
     "objectID": "posts/post_2/post2.html",
