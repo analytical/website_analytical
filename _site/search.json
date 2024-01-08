@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.0478344"
+    "text": "mean(rnorm(100))\n\n[1] -0.08607028"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.0478344"
+    "text": "mean(rnorm(100))\n\n[1] -0.08607028"
   },
   {
     "objectID": "posts/post_2/post2.html",
@@ -56,15 +56,15 @@
     "text": "post 1\n\n\n\n\n\nEn el siguiente nivel podemos\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\npost 2\n\n\n\n\n\n\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
   },
   {
-    "objectID": "posts/post_1/post1.html",
-    "href": "posts/post_1/post1.html",
+    "objectID": "posts/post_1/index.html",
+    "href": "posts/post_1/index.html",
     "title": "post 1",
     "section": "",
     "text": "hist(rnorm(1000))\n\n\n\n\n\n\n\n\n\nmean(35)\n\n[1] 35"
   },
   {
-    "objectID": "posts/post_1/post1.html#comprobado",
-    "href": "posts/post_1/post1.html#comprobado",
+    "objectID": "posts/post_1/index.html#comprobado",
+    "href": "posts/post_1/index.html#comprobado",
     "title": "post 1",
     "section": "",
     "text": "mean(35)\n\n[1] 35"

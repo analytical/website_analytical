@@ -28,5 +28,11 @@
   },
   "post/post_2/post2.qmd": {
     "post2.html": "de493dac"
+  },
+  "posts/post_1/post_1.qmd": {
+    "post_1.html": "9a2ffe96"
+  },
+  "posts/post_1/index.qmd": {
+    "index.html": "3ded8272"
   }
 }
