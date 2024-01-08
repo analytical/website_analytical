@@ -2,34 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.quarto.org/test2.html</loc>
-    <lastmod>2024-01-08T16:17:17.996Z</lastmod>
+    <lastmod>2024-01-08T17:30:57.210Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/post/post_2/post2.html</loc>
-    <lastmod>2024-01-08T16:17:14.044Z</lastmod>
+    <lastmod>2024-01-08T17:30:53.541Z</lastmod>
   </url>
   <url>
-    <loc>https://www.quarto.org/post/incertidumbre-de-una-calibracion-no-lineal/index.html</loc>
-    <lastmod>2024-01-08T16:17:10.268Z</lastmod>
+    <loc>https://www.quarto.org/post/mis-datos-no-son-normales/index.html</loc>
+    <lastmod>2024-01-08T17:30:52.305Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/post/cual-es-la-maxima-diferencia-tolerable-entre-duplicados-de-analisis/index.html</loc>
+    <lastmod>2024-01-08T17:30:49.398Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/post/como-calcular-incertidumbre-calibracion/index.html</loc>
+    <lastmod>2024-01-08T17:30:46.952Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/blog.html</loc>
-    <lastmod>2024-01-08T16:17:24.199Z</lastmod>
+    <lastmod>2024-01-08T17:30:45.669Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/about.html</loc>
-    <lastmod>2024-01-08T16:17:00.564Z</lastmod>
+    <lastmod>2024-01-08T17:30:44.834Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/index.html</loc>
-    <lastmod>2024-01-08T16:17:01.577Z</lastmod>
+    <lastmod>2024-01-08T17:30:46.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/post/como-demuestro-que-mi-curva-de-calibracion-es-lineal/index.html</loc>
+    <lastmod>2024-01-08T17:30:48.275Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.quarto.org/post/incertidumbre-de-una-calibracion-no-lineal/index.html</loc>
+    <lastmod>2024-01-08T17:30:51.325Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/post/post_1/index.html</loc>
-    <lastmod>2024-01-08T16:17:12.259Z</lastmod>
+    <lastmod>2024-01-08T17:30:52.931Z</lastmod>
   </url>
   <url>
     <loc>https://www.quarto.org/talks.html</loc>
-    <lastmod>2024-01-08T16:17:16.405Z</lastmod>
+    <lastmod>2024-01-08T17:30:55.710Z</lastmod>
   </url>
 </urlset>

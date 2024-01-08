@@ -43,5 +43,17 @@
   },
   "post/post_1/index.qmd": {
     "index.html": "97a85352"
+  },
+  "post/como-calcular-incertidumbre-calibracion/index.qmd": {
+    "index.html": "9826f1ca"
+  },
+  "post/como-demuestro-que-mi-curva-de-calibracion-es-lineal/index.qmd": {
+    "index.html": "cb39310a"
+  },
+  "post/cual-es-la-maxima-diferencia-tolerable-entre-duplicados-de-analisis/index.qmd": {
+    "index.html": "c3ebd13e"
+  },
+  "post/mis-datos-no-son-normales/index.qmd": {
+    "index.html": "1fa1c309"
   }
 }
