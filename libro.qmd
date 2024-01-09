@@ -1,0 +1,10 @@
+---
+title: "Coming soon"
+toc: false
+---
+## Métodos Estadísticos Modernos Aplicados en Química Analítica -- Usando R
+
+Este es un proyecto en desarrollo.
+Iremos informando el avance en esta misma página
+
+![](img/ebook.png)

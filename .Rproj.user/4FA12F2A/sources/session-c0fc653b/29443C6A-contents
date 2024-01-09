@@ -37,6 +37,8 @@ website:
         file: cursos.qmd
       - text: "Blog"
         file: blog.qmd
+      - text: "Libro"
+        file: libro.qmd
       - text: "Quénes somos"
         file: about.qmd
   

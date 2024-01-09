@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.0223676"
+    "text": "mean(rnorm(100))\n\n[1] 0.247473"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.0223676"
+    "text": "mean(rnorm(100))\n\n[1] 0.247473"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -105,25 +105,18 @@
     "text": "Análisis estadístico en R\nAbrimos el software RStudio y generamos un nuevo script:\n\nGuardamos el script con el nombre acreditados.R en el mismo directorio que guardamos la base de datos limpia acreditados.xlsx\nLos siguientes comandos importan la base de datos del INN desde el Excel hasta R:\n\nlibrary(readxl)\nacreditados &lt;- read_excel('acreditados.xlsx', sheet = 'datos')\n\nLa importación ha sido exitosa si observa la siguiente tabla con el comando head()\n\nhead(acreditados)\n\n# A tibble: 6 × 7\n      N N_certificado Organización      Tipo_de_OEC Area  Observaciones Telefono\n  &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;   \n1     1 LE 633        Universidad Aust… Laboratori… Bioe… &lt;NA&gt;          (56 65)…\n2     2 LE 800        Universidad de C… Laboratori… Bioe… &lt;NA&gt;          (56) 22…\n3     3 LE 893        Universidad de C… Laboratori… Bioe… &lt;NA&gt;          (56 65)…\n4     4 LE 1287       Secretaria Regio… Laboratori… Bioe… &lt;NA&gt;          (56 61)…\n5     5 LE 1450       TAAG Genetics S.… Laboratori… Biol… &lt;NA&gt;          (56) 22…\n6     6 LE 1279       Universidad de L… Laboratori… Bioq… &lt;NA&gt;          (56 64)…\n\n\nAhora haremos el gráfico de barras el cual indica el número de laboratorios de ensayo acreditados por el INN al 03 de julio de 2023 clasificados por Area. Por una cuestión de espacios sólo se muestran aquellas áreas con más de 10 laboratorios acreditados:\n\nlibrary(tidyverse)\nlibrary(readxl)\nlibrary(ggplot2)\nlibrary(magrittr)\n\nacreditados &lt;- read_excel('acreditados.xlsx', sheet = 'datos')\n\ntabla &lt;- acreditados %&gt;% \n  group_by(Area) %&gt;% \n  summarise(n = n())\n\n# Número de acreditaciones suspendidas\nn.suspendidos &lt;- acreditados %&gt;% \n  filter(!is.na(Observaciones)) %&gt;% \n  count()\n\n# Número de acreditaciones totales (incluyendo las suspendidas)\nn.total &lt;- acreditados %&gt;% \n  count()\n\n\nggplot(tabla %&gt;% filter(n &gt;= 10), aes(x = reorder(Area, n), y = n, label = n)) +\n  geom_bar(stat = \"identity\", fill = 'blue', alpha = 0.7) +\n  ylab('N° de laboratorios de ensayo') +\n  xlab('Área') +\n  labs(title = paste('Acreditaciones en Chile por INN bajo ISO 17025 por área N =', \n                     n.total),\n       subtitle = paste(\"Incluye \", n.suspendidos, \"suspendidos. Sólo se muestran n &gt; 10\"),\n       caption = \"Fuente: https://acreditacion.innonline.cl/\") +\n  theme_bw() +\n  geom_text(size=5,hjust=1.5, col = 'white') +\n  coord_flip()\n\n\n\nggsave('barras.png')\n\n¡Listo! En un siguiente paso podríamos desagregar por Organización, de tal manera de atribuir las acreditaciones clasificando por razón social ¿Le parece estimad@ lector@?\nSaludos"
   },
   {
-    "objectID": "cursos.html",
-    "href": "cursos.html",
-    "title": "Cursos",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "<strong>Analytical</strong>",
     "section": "",
-    "text": "Herramientas de Diseño e Interpretación Estadística de las Mediciones\n\n\nFacultad de Ciencias Químicas y Farmacéuticas | Universidad de Chile  AGOSTO 2024\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+    "text": "Extraemos la mayor cantidad de información de sus datos analíticos a través de la aplicación de métodos estadísticos modernos y un diseño experimental óptimo"
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "¿Cuántos laboratorios de ensayo acreditados por el INN hay en Chile? Versión 2023\n\n\n\n\n\n\n\n\n\n\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nIncertidumbre de una calibración no lineal\n\n\nMétodo GUM y Monte Carlo – Norma ISO 8466:2\n\n\n\n\n\n\n\n\n\n25 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cómo detectar el efecto matriz en un método analítico?\n\n\n\n\n\n\n\n\n\n\n\n\n7 min\n\n\n\n\n\n\n  \n\n\n\n\nPrueba de linealidad de una curva de calibración en Excel… Sí ¡En Excel!\n\n\n\n\n\n\n\n\n\n\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nValidación de los cálculos de incertidumbre en química analítica con el método Monte Carlo. Parte II\n\n\n\n\n\n\n\n\n\n\n\n\n15 min\n\n\n\n\n\n\n  \n\n\n\n\nValidación de los cálculos de incertidumbre en química analítica con el método Monte Carlo. Parte I\n\n\n\n\n\n\n\n\n\n\n\n\n16 min\n\n\n\n\n\n\n  \n\n\n\n\n¡Mis datos no son normales! ¿Qué hago?…Cálmese, nunca lo fueron… ni lo serán\n\n\n\n\n\n\n\n\n\n\n\n\n11 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cuál es la máxima diferencia tolerable entre duplicados de análisis?\n\n\n\n\n\n\n\n\n\n\n\n\n13 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cómo demuestro que mi curva de calibración es lineal?\n\n\n\n\n\n\n\n\n\n\n\n\n16 min\n\n\n\n\n\n\n  \n\n\n\n\nCómo calcular la incertidumbre de una curva de calibración\n\n\n\n\n\n\n\n\n\n\n\n\n6 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Carlos Gómez",
-    "section": "",
-    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\nProfesor de los módulos de Estadística en los Diplomados de Análisis Orgánico y Buenas Prácticas de Manufactura Farmacéutica impartidos por la Facultad de Ciencias Químicas y Farmacéuticas de la Universidad de Chile.\n\n\n\n Descargar CV\n\n\n\n\n\n Back to top"
+    "objectID": "index.html#training",
+    "href": "index.html#training",
+    "title": "<strong>Analytical</strong>",
+    "section": "Training",
+    "text": "Training\nDesarrollamos cursos in-house sobre métodos estadísticos aplicados en el laboratorio analítico:\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas y microbiológicas\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528\nValidación de procesos farmacéuticos"
   },
   {
     "objectID": "cursos/DAIO_uchile/index.html",
@@ -140,18 +133,39 @@
     "text": "En este curso utilizamos extensivamente métodos de simulación en lenguaje de programción R, con el objetivo de entender los métodos estadísticos aplicados en Química Analítica, sus alcances y suposiciones:\n\n¿Y si mis datos no son Normales?¿cómo los analizo?\nNecesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo obtengo?\n¿Cómo minimizar la incertidumbre de calibración?\nNecesito comparar el desempeño de 5 analistas en la determinación de un antibiótico en alimentos ¿cuál método estadístico debo aplicar?\n¿Cómo se interpreta correctamente un p-value?\nDel 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la precisión intermedia de los analistas?\nObtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar que la curva de calibración es lineal?\n¿Cuál es la diferencia entre el r y r²?\n¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?\n¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la verdadera media esté dentro del intervalo?\n¿Cómo comparo 2 métodos analíticos si los datos no son normales?\n\nY otros tópicos de interés para profesionales de laboratorios de ensayos físico-químicos y microbiológicos.\nMás información:"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "<strong>Analytical</strong>",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Carlos Gómez",
     "section": "",
-    "text": "Extraemos la mayor cantidad de información de sus datos analíticos a través de la aplicación de métodos estadísticos modernos y un diseño experimental óptimo"
+    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\nProfesor de los módulos de Estadística en los Diplomados de Análisis Orgánico y Buenas Prácticas de Manufactura Farmacéutica impartidos por la Facultad de Ciencias Químicas y Farmacéuticas de la Universidad de Chile.\n\n\n\n Descargar CV\n\n\n\n\n\n Back to top"
   },
   {
-    "objectID": "index.html#training",
-    "href": "index.html#training",
-    "title": "<strong>Analytical</strong>",
-    "section": "Training",
-    "text": "Training\nDesarrollamos cursos in-house sobre métodos estadísticos aplicados en el laboratorio analítico:\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas y microbiológicas\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528\nValidación de procesos farmacéuticos"
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "¿Cuántos laboratorios de ensayo acreditados por el INN hay en Chile? Versión 2023\n\n\n\n\n\n\n\n\n\n\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nIncertidumbre de una calibración no lineal\n\n\nMétodo GUM y Monte Carlo – Norma ISO 8466:2\n\n\n\n\n\n\n\n\n\n25 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cómo detectar el efecto matriz en un método analítico?\n\n\n\n\n\n\n\n\n\n\n\n\n7 min\n\n\n\n\n\n\n  \n\n\n\n\nPrueba de linealidad de una curva de calibración en Excel… Sí ¡En Excel!\n\n\n\n\n\n\n\n\n\n\n\n\n4 min\n\n\n\n\n\n\n  \n\n\n\n\nValidación de los cálculos de incertidumbre en química analítica con el método Monte Carlo. Parte II\n\n\n\n\n\n\n\n\n\n\n\n\n15 min\n\n\n\n\n\n\n  \n\n\n\n\nValidación de los cálculos de incertidumbre en química analítica con el método Monte Carlo. Parte I\n\n\n\n\n\n\n\n\n\n\n\n\n16 min\n\n\n\n\n\n\n  \n\n\n\n\n¡Mis datos no son normales! ¿Qué hago?…Cálmese, nunca lo fueron… ni lo serán\n\n\n\n\n\n\n\n\n\n\n\n\n11 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cuál es la máxima diferencia tolerable entre duplicados de análisis?\n\n\n\n\n\n\n\n\n\n\n\n\n13 min\n\n\n\n\n\n\n  \n\n\n\n\n¿Cómo demuestro que mi curva de calibración es lineal?\n\n\n\n\n\n\n\n\n\n\n\n\n16 min\n\n\n\n\n\n\n  \n\n\n\n\nCómo calcular la incertidumbre de una curva de calibración\n\n\n\n\n\n\n\n\n\n\n\n\n6 min\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "cursos.html",
+    "href": "cursos.html",
+    "title": "Cursos",
+    "section": "",
+    "text": "Herramientas de Diseño e Interpretación Estadística de las Mediciones\n\n\nFacultad de Ciencias Químicas y Farmacéuticas | Universidad de Chile  AGOSTO 2024\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n\n Back to top"
+  },
+  {
+    "objectID": "libro.html",
+    "href": "libro.html",
+    "title": "Coming soon",
+    "section": "",
+    "text": "Este es un proyecto en desarrollo. Iremos informando el avance en esta misma página"
+  },
+  {
+    "objectID": "libro.html#métodos-estadísticos-modernos-aplicados-en-química-analítica-usando-r",
+    "href": "libro.html#métodos-estadísticos-modernos-aplicados-en-química-analítica-usando-r",
+    "title": "Coming soon",
+    "section": "",
+    "text": "Este es un proyecto en desarrollo. Iremos informando el avance en esta misma página"
   },
   {
     "objectID": "post/como-calcular-incertidumbre-calibracion/index.html",
