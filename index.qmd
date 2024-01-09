@@ -8,7 +8,7 @@ format:
     page-layout: full
 about:
   template: trestles
-  image-width: "500px"
+  # image-width: "500px"
   links:
     - icon: linkedin
       text: LinkedIn

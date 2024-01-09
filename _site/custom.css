@@ -1,5 +1,13 @@
 .button_analytical {
-  background-color: #374258AA;
-  border: #374258AA;
+  background-color: #374258;
+  border: none;
   color: #F3F3F3;
+}
+
+.button_analytical:hover{
+  background-color: #F74464;
+}
+
+.button_analytical:active{
+  background-color: #6A7285;
 }
