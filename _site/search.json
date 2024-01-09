@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.1125355"
+    "text": "mean(rnorm(100))\n\n[1] 0.2841717"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.1125355"
+    "text": "mean(rnorm(100))\n\n[1] 0.2841717"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -123,14 +123,14 @@
     "href": "about.html",
     "title": "Carlos Gómez",
     "section": "",
-    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n\n\n Descargar CV"
+    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\nProfesor de los módulos de Estadística en los Diplomados de Análisis Orgánico y Buenas Prácticas de Manufactura Farmacéutica impartidos por la Facultad de Ciencias Químicas y Farmacéuticas de la Universidad de Chile.\n\n\n\n Descargar CV"
   },
   {
     "objectID": "about.html#educación",
     "href": "about.html#educación",
     "title": "Carlos Gómez",
     "section": "",
-    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n\n\n Descargar CV"
+    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\nProfesor de los módulos de Estadística en los Diplomados de Análisis Orgánico y Buenas Prácticas de Manufactura Farmacéutica impartidos por la Facultad de Ciencias Químicas y Farmacéuticas de la Universidad de Chile.\n\n\n\n Descargar CV"
   },
   {
     "objectID": "cursos/DAIO_uchile/index.html",
@@ -158,7 +158,7 @@
     "href": "index.html#training",
     "title": "<strong>Analytical</strong>",
     "section": "Training",
-    "text": "Training\nOfrecemos cursos in-house en áreas\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas\nProgramacion en lenguaje R aplicado al laboratorio\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528"
+    "text": "Training\nDesarrollamos cursos in-house en métodos estadísticos aplicados en el laboratorio analítico:\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas y microbiológicas\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528\nValidación de procesos farmacéuticos"
   },
   {
     "objectID": "post/como-calcular-incertidumbre-calibracion/index.html",

@@ -37,7 +37,7 @@ website:
         file: cursos.qmd
       - text: "Blog"
         file: blog.qmd
-      - text: "Sobre mí"
+      - text: "Quénes somos"
         file: about.qmd
   
   # sidebar:
