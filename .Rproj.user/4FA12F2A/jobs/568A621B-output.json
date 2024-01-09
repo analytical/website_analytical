@@ -22,5 +22,5 @@
 [1,"\r\n\r\nprocessing file: test2.qmd\r\n\r  |                                                          \r  |                                                    |   0%\r  |                                                          \r  |.................                                   |  33%                  \r  |                                                          \r  |...................................                 |  67% [unnamed-chunk-1]"]
 [1,"\r  |                                                          \r  |....................................................| 100%                  \r                                                                                                            \r\noutput file: test2.knit.md\r\n\r\n"]
 [1,"\n"]
-[1,"Watching files for changes\nBrowse at http://localhost:7655/\n"]
+[1,"Watching files for changes\nBrowse at http://localhost:6256/\n"]
 [1,"GET: /\n"]

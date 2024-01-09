@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.04947403"
+    "text": "mean(rnorm(100))\n\n[1] 0.08054213"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.04947403"
+    "text": "mean(rnorm(100))\n\n[1] 0.08054213"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -151,7 +151,7 @@
     "href": "index.html",
     "title": "<strong>Analytical</strong>",
     "section": "",
-    "text": "Extraemos la mayor cantidad de información de sus datos analíticos a través de la aplicación de métodos estadísticos modernos de análisis y un diseño experimental óptimo"
+    "text": "Extraemos la mayor cantidad de información de sus datos analíticos a través de la aplicación de métodos estadísticos modernos y un diseño experimental óptimo"
   },
   {
     "objectID": "index.html#training",

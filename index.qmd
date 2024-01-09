@@ -24,7 +24,7 @@ about:
 
 ::: {style="font-size: 1.5em;"}
 _Extraemos la mayor cantidad de información de sus datos analíticos a través de
- la aplicación de métodos estadísticos **modernos** de análisis y un diseño experimental óptimo_
+ la aplicación de métodos estadísticos **modernos** y un diseño experimental óptimo_
 :::
 
 ---
