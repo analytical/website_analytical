@@ -3,7 +3,7 @@
     "path": "C:/Users/cvgom/OneDrive/Analytical/Pagina_Web/website_analytical/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "2283007475",
     "contents": "",
     "dirty": false,
     "created": 1704737092014.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "19,17",
-        "scrollLine": "0"
+        "cursorPosition": "17,17",
+        "scrollLine": "4"
     },
     "folds": "",
-    "lastKnownWriteTime": 1704811996,
+    "lastKnownWriteTime": 1704822146,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1704811996116,
+    "last_content_update": 1704822146520,
     "read_only": false,
     "read_only_alternatives": []
 }

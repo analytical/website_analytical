@@ -63,7 +63,7 @@ website:
 format:
   html:
     theme: uniited
-    css: styles.css
+    css: [styles.css, custom.css]
     toc: true
     # page-layout: full
     # grid:
