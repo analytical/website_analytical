@@ -296,64 +296,27 @@ F-statistic:  1747 on 1 and 8 DF,  p-value: 1.181e-10</code></pre>
 <p>Esta tabla nos dice que el intercepto del modelo es <span class="math inline">\(a = 0.0250303\)</span> y la pendiente <span class="math inline">\(b = 0.0057172\)</span>. Note el alto coeficiente de determinación <span class="math inline">\(r^{2} = 0.9954\)</span> lo cual indica que es un buen modelo. El coeficiente de correlación es <span class="math inline">\(r = 0.998\)</span> que si bien es un dato a considerar, no es una prueba formal de linealidad.</p>
 <p>La siguiente figura muestra el ajuste lineal sobre los datos de calibración:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpmisc) <span class="co"># para escribir ecuaciones dentro del gráfico</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: ggpp</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 methods overwritten by 'ggpp':
-  method                  from   
-  heightDetails.titleGrob ggplot2
-  widthDetails.titleGrob  ggplot2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'ggpp'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:ggplot2':
-
-    annotate</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in .recacheSubclasses(def@className, def, env): undefined subclass
-"ndiMatrix" of class "replValueSp"; definition not updated</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'ggpmisc':
-  method                  from   
-  as.character.polynomial polynom</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> F, </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># dibuja la curva de calibración lineal</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Concentración [mg/L]'</span>) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Absorbancia [UA]'</span>) <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_poly_eq</span>(<span class="fu">aes</span>(<span class="at">label =</span>  <span class="fu">paste</span>(<span class="fu">stat</span>(eq.label), <span class="fu">stat</span>(rr.label), </span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">sep =</span> <span class="st">"*</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">*"</span>)), </span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">formula =</span> y <span class="sc">~</span> x, </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">parse =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">rr.digits =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `stat(eq.label)` was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(eq.label)` instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpmisc) <span class="co"># para escribir ecuaciones dentro del gráfico</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">se =</span> F, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co"># dibuja la curva de calibración lineal</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Concentración [mg/L]'</span>) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Absorbancia [UA]'</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_poly_eq</span>(<span class="fu">aes</span>(<span class="at">label =</span>  <span class="fu">paste</span>(<span class="fu">stat</span>(eq.label), <span class="fu">stat</span>(rr.label), </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">sep =</span> <span class="st">"*</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">*"</span>)), </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">formula =</span> y <span class="sc">~</span> x, </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">parse =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">rr.digits =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/plot.lineal-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Se observa que el ajuste lineal no es un buen modelo, pues no captura la curvatura de los datos a pesar del alto coeficiente de correlación. Esto se oberva más claramente si obervamos el gráfico de residuos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit.lineal, <span class="at">which =</span> <span class="dv">1</span>, <span class="at">add.smooth =</span> F, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">'red'</span>, </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Gráfico de residuos modelo lineal'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fit.lineal, <span class="at">which =</span> <span class="dv">1</span>, <span class="at">add.smooth =</span> F, <span class="at">pch =</span> <span class="dv">19</span>, <span class="at">col =</span> <span class="st">'red'</span>, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Gráfico de residuos modelo lineal'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/fit.lin.res-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -363,9 +326,9 @@ Attaching package: 'ggpp'</code></pre>
 y = a + bx + cx^2
 \]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fit.nolineal <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> d) <span class="co"># ajuste cuadrático y los guardamos </span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># con el nombre fit.nolineal</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.nolineal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fit.nolineal <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">data =</span> d) <span class="co"># ajuste cuadrático y los guardamos </span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                          <span class="co"># con el nombre fit.nolineal</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit.nolineal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -391,25 +354,25 @@ F-statistic: 2.23e+04 on 2 and 7 DF,  p-value: 4.84e-14</code></pre>
 <p>Se obtiene una tabla similar que la del modelo lineal, con la adición del coeficiente que acompaña al <span class="math inline">\(x^2\)</span>: <code>I(x^2)</code> <span class="math inline">\(= -2.504\times 10^{-5}\)</span>. Note que el coeficiente de determinación del modelo cuadrático es mayor que el del modelo lineal. Esto siempre se cumplirá, lo que hace el Test de Mandel es discernir si esta “mejora” en el modelo es “significativa”.</p>
 <p>La siguiente figura muestra el ajuste no lineal, el cual captura mucho mejor la curvatura de los datos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>,         <span class="co"># dibuja la curva de calibración no lineal</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F, </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Concentración [mg/L]'</span>) <span class="sc">+</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Absorbancia [UA]'</span>) <span class="sc">+</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_poly_eq</span>(<span class="fu">aes</span>(<span class="at">label =</span>  <span class="fu">paste</span>(<span class="fu">stat</span>(eq.label), <span class="fu">stat</span>(rr.label), </span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">sep =</span> <span class="st">"*</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">*"</span>)),</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), </span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">parse =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">rr.digits =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">'red'</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>,         <span class="co"># dibuja la curva de calibración no lineal</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> F, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">'Concentración [mg/L]'</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">'Absorbancia [UA]'</span>) <span class="sc">+</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_poly_eq</span>(<span class="fu">aes</span>(<span class="at">label =</span>  <span class="fu">paste</span>(<span class="fu">stat</span>(eq.label), <span class="fu">stat</span>(rr.label), </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">sep =</span> <span class="st">"*</span><span class="sc">\"</span><span class="st">, </span><span class="sc">\"</span><span class="st">*"</span>)),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">formula =</span> y <span class="sc">~</span> x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>), </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">parse =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">rr.digits =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/plot.nolineal-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Ok, aplicamos el Test de Mandel con el comando <code>anova</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.lineal, fit.nolineal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(fit.lineal, fit.nolineal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -469,9 +432,6 @@ Q_{x^4} &amp;= \sum x_{i}^4 - \frac{\left(\sum x_{i}^2\right)^2}{N}
 </ol>
 <p>En el caso de la calibración lineal, la incertidumbre de calibración se minimiza en el centroide de la curva, en el caso del modelo cuadrático esto no siempre es así. Observe en la siguiente figura las bandas de confianza de ambos tipos de calibración:</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/patch-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -479,29 +439,29 @@ Q_{x^4} &amp;= \sum x_{i}^4 - \frac{\left(\sum x_{i}^2\right)^2}{N}
 <p>Advierta que ambos modelos comparten la propiedad que la mayor incertidumbre se encuentra en los extremos. Sin embargo, en la calibración cuadrática, para este conjunto de datos, la menor incertidumbre no está en el centro de la curva.</p>
 <p>Ok, a continuación implementaremos la ecuación de incertidumbre en <code>R</code> con los datos del ejemplo de la sección 7 de la norma. La señal instrumental de la muestra problema es <span class="math inline">\(y_{0} = 0.084\)</span> UA:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="co"># Número de calibrantes</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>N.hat <span class="ot">&lt;-</span> <span class="dv">1</span>     <span class="co"># Número de replicados de la muestra problema</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>Qxx <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>Qx3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>) <span class="sc">-</span>(<span class="fu">sum</span>(x) <span class="sc">*</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>Qx4 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>) <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">3</span>]</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>s.y <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>sigma <span class="co"># Es lo que R denomina Residual standard error</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, N <span class="sc">-</span> <span class="dv">3</span>) <span class="co"># El T de Student (¡Ya no se usan tablas!)</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.084</span> <span class="co"># Es la señal instrumental de la muestra problema</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>x.hat <span class="ot">&lt;-</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c) <span class="co"># Concentración de la muestra</span></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>Ix <span class="ot">&lt;-</span> (s.y <span class="sc">*</span> t)<span class="sc">/</span>(b <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>c<span class="sc">*</span>x.hat) <span class="sc">*</span> <span class="fu">sqrt</span>(</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">/</span>N <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>N.hat <span class="sc">+</span> ((x.hat <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>Qx4 <span class="sc">+</span> (x.hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> Qxx <span class="sc">-</span>  </span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>(x.hat <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">*</span>(x.hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)<span class="sc">*</span>Qx3)<span class="sc">/</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  (Qx4 <span class="sc">*</span> Qxx <span class="sc">-</span> Qx3<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>Ix <span class="ot">&lt;-</span> <span class="fu">unname</span>(Ix) <span class="co"># Simplemente es para dejar sólo el número</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="co"># Número de calibrantes</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>N.hat <span class="ot">&lt;-</span> <span class="dv">1</span>     <span class="co"># Número de replicados de la muestra problema</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>Qxx <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Qx3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>) <span class="sc">-</span>(<span class="fu">sum</span>(x) <span class="sc">*</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>Qx4 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>) <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">1</span>]</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">2</span>]</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coefficients[<span class="dv">3</span>]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>s.y <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>sigma <span class="co"># Es lo que R denomina Residual standard error</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, N <span class="sc">-</span> <span class="dv">3</span>) <span class="co"># El T de Student (¡Ya no se usan tablas!)</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.084</span> <span class="co"># Es la señal instrumental de la muestra problema</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>x.hat <span class="ot">&lt;-</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c) <span class="co"># Concentración de la muestra</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>Ix <span class="ot">&lt;-</span> (s.y <span class="sc">*</span> t)<span class="sc">/</span>(b <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>c<span class="sc">*</span>x.hat) <span class="sc">*</span> <span class="fu">sqrt</span>(</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">/</span>N <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>N.hat <span class="sc">+</span> ((x.hat <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>Qx4 <span class="sc">+</span> (x.hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> Qxx <span class="sc">-</span>  </span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>(x.hat <span class="sc">-</span> <span class="fu">mean</span>(x))<span class="sc">*</span>(x.hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)<span class="sc">*</span>Qx3)<span class="sc">/</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  (Qx4 <span class="sc">*</span> Qxx <span class="sc">-</span> Qx3<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>Ix <span class="ot">&lt;-</span> <span class="fu">unname</span>(Ix) <span class="co"># Simplemente es para dejar sólo el número</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>La concentración de la muestra es <span class="math inline">\(\hat{x} = 12.17\)</span> mg/L. Al aplicar esta metodología obtenemos una incertidumbre expandida de <span class="math inline">\(I(\hat{x}) = 0.63\)</span> mg/L, es decir, exactamente la misma que la que indica la norma ISO. Note que si Ud. quisiera combinar esta incertidumbre de calibración con algún otro factor (p.ej: masa de la muestra, volumen de aforo, etc.) debe primero tansformarla en incertidumbre estándar, dividiéndola por el factor de cobertura <span class="math inline">\(k\)</span>, que en este caso corresponde al t Student con <span class="math inline">\(N - 3\)</span> grados de libertad al 95% de confianza (k = 2.36):</p>
 <p><span class="math display">\[
@@ -509,41 +469,41 @@ u_{\hat{x}} = \frac{U_{\hat{x}}}{k} = 0.27\, \, \text{mg/L}
 \]</span> Por lo tanto, si tuviéramos que informar el resultado de la concentración de la muestra interpolada en la curva de calibración no lineal informaríamos <span class="math inline">\(12.17 \pm 0.63\)</span> mg/L [<em>nota mental: mmmm… esto de las cifras significativas da para otro post, pero dejémoslo así por ahora. No olvidar borrar este comentario.</em>]</p>
 <p>¿Cómo varía esta incertidumbre de calibración no lineal con la concentración de la muestra? La siguiente figura muestra esta variación:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">66</span>, <span class="at">by =</span> <span class="dv">6</span>) <span class="co"># Rango de concentración</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>N.hat <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>mu.x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x) <span class="co"># promedio de las concentraciones de los calibrantes</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>sq.x <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="co"># suma de las concentraciones de los calibrantes al cuadrado</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>Qxx <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>Qx3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>) <span class="sc">-</span>(<span class="fu">sum</span>(x) <span class="sc">*</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>Qx4 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>) <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, N <span class="sc">-</span> <span class="dv">3</span>)</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Para graficar la incertidumbre vs concentración, primero debemos crear una</span></span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="co"># función que tome un X (una concentración) y calcule el Y (incertidumbre)</span></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>Ux <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    U <span class="ot">&lt;-</span> s.y<span class="sc">*</span>t<span class="sc">/</span>(b <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>c<span class="sc">*</span>x) <span class="sc">*</span> <span class="fu">sqrt</span>(</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span><span class="sc">/</span>N <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>N.hat <span class="sc">+</span> ((x <span class="sc">-</span> mu.x)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>Qx4 <span class="sc">+</span> (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> sq.x<span class="sc">/</span>N)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> Qxx <span class="sc">-</span>  </span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">*</span>(x <span class="sc">-</span> mu.x)<span class="sc">*</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> sq.x<span class="sc">/</span>N)<span class="sc">*</span>Qx3)<span class="sc">/</span></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    (Qx4 <span class="sc">*</span> Qxx <span class="sc">-</span> Qx3<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">unname</span>(U))</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficamos concentración (X) vs Incertidumbre (Y)</span></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">Ux</span>(x), <span class="at">type =</span> <span class="st">'n'</span>,</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Concentración vs Incertidumbre de calibración'</span>,</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Concentración [mg/L]'</span>,</span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">'Incertidumbre expandida [mg/L]'</span>)</span>
-<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">spline</span>(x, <span class="fu">Ux</span>(x)), <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">66</span>, <span class="at">by =</span> <span class="dv">6</span>) <span class="co"># Rango de concentración</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>N.hat <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mu.x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x) <span class="co"># promedio de las concentraciones de los calibrantes</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>sq.x <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="co"># suma de las concentraciones de los calibrantes al cuadrado</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>Qxx <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>Qx3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">3</span>) <span class="sc">-</span>(<span class="fu">sum</span>(x) <span class="sc">*</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>N)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>Qx4 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">4</span>) <span class="sc">-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>N</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, N <span class="sc">-</span> <span class="dv">3</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Para graficar la incertidumbre vs concentración, primero debemos crear una</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># función que tome un X (una concentración) y calcule el Y (incertidumbre)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>Ux <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    U <span class="ot">&lt;-</span> s.y<span class="sc">*</span>t<span class="sc">/</span>(b <span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span>c<span class="sc">*</span>x) <span class="sc">*</span> <span class="fu">sqrt</span>(</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    <span class="dv">1</span><span class="sc">/</span>N <span class="sc">+</span> <span class="dv">1</span><span class="sc">/</span>N.hat <span class="sc">+</span> ((x <span class="sc">-</span> mu.x)<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>Qx4 <span class="sc">+</span> (x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> sq.x<span class="sc">/</span>N)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> Qxx <span class="sc">-</span>  </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2</span><span class="sc">*</span>(x <span class="sc">-</span> mu.x)<span class="sc">*</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> sq.x<span class="sc">/</span>N)<span class="sc">*</span>Qx3)<span class="sc">/</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    (Qx4 <span class="sc">*</span> Qxx <span class="sc">-</span> Qx3<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">unname</span>(U))</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Graficamos concentración (X) vs Incertidumbre (Y)</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">Ux</span>(x), <span class="at">type =</span> <span class="st">'n'</span>,</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Concentración vs Incertidumbre de calibración'</span>,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Concentración [mg/L]'</span>,</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">'Incertidumbre expandida [mg/L]'</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">spline</span>(x, <span class="fu">Ux</span>(x)), <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/u.vs.con-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Se aprecia que la incertidumbre aumenta con la concentración en una forma no constante para concentraciones mayores a 20 mg/L. Tal como mencionamos anteriormente, el mínimo no se encuentra en el centro del rango de concentración como ocurre con la calibración lineal. Para encontrar el valor exacto de concentración que minimiza la incertidumbre en este rango, usamos el comando <code>optimize</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca el mínimo de la función Ux en el intervalo de 12 a 66 mg/L</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize</span>(Ux, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">66</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Busca el mínimo de la función Ux en el intervalo de 12 a 66 mg/L</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">optimize</span>(Ux, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">66</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$minimum
 [1] 20.29164
@@ -555,10 +515,10 @@ $objective
 <p>La concentración que minimiza la incertidumbre es 20.29 mg/L.</p>
 <p>Muy entretenido, pero la vida es corta y debemos ser eficientes por lo tanto, para evitarnos el “tedio” de implementar la fórmula a mano, utilizaremos el package <code>investr</code> el cual calcula exactamente la incertidumbre de calibración de un gran número de modelos de calibración, entre ellos, los modelos cuadráticos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># y0 es la señal de la muestra problema y0 = 0.084 UA</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(investr) <span class="co"># Cargamos la librería investr</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>x.hat <span class="ot">&lt;-</span> <span class="fu">invest</span>(fit.nolineal, <span class="at">data =</span> d, <span class="at">y0 =</span> y0, <span class="at">interval =</span> <span class="st">'Wald'</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>x.hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># y0 es la señal de la muestra problema y0 = 0.084 UA</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(investr) <span class="co"># Cargamos la librería investr</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>x.hat <span class="ot">&lt;-</span> <span class="fu">invest</span>(fit.nolineal, <span class="at">data =</span> d, <span class="at">y0 =</span> y0, <span class="at">interval =</span> <span class="st">'Wald'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>x.hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  estimate      lower      upper         se 
 12.1672952 11.5400416 12.7945489  0.2652657 </code></pre>
@@ -573,7 +533,7 @@ $objective
 </ul>
 <p>Note que si quisiéramos obener <span class="math inline">\(I(\hat{x})\)</span> a partir de esta tabla, tendríamos que hacer la siguiente operación <span class="math inline">\(I(\hat{x}) =\)</span> <code>upper</code> - <code>estimate</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>x.hat<span class="sc">$</span>upper <span class="sc">-</span> x.hat<span class="sc">$</span>estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x.hat<span class="sc">$</span>upper <span class="sc">-</span> x.hat<span class="sc">$</span>estimate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.6272536</code></pre>
 </div>
@@ -600,22 +560,22 @@ $objective
 <li>Las incertidumbres estándar de los parámetros del modelo pueden ser obtenidas directamente del ajuste cuadrático <code>fit.nolineal</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># parámetros del modelo</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">1</span>]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">2</span>]</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">3</span>]</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># las incertidumbres estándar de a, b y c las obtenemos con la función summary</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>ua <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">1</span>, <span class="dv">2</span>]</span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>ub <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">2</span>]</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>uc <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">3</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># parámetros del modelo</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">1</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">2</span>]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> fit.nolineal<span class="sc">$</span>coeff[<span class="dv">3</span>]</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># las incertidumbres estándar de a, b y c las obtenemos con la función summary</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>ua <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>ub <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">2</span>, <span class="dv">2</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>uc <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>coefficients[<span class="dv">3</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>La incertidumbre estándar de la señal instrumental de la muestra problema también puede obtenerse del ajuste cuadrático y corresponde a la desviación estándar residual:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>uy0 <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>sigma</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.084</span> <span class="co"># dato del problema, es decir, la absorbancia de la muestra</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>uy0 <span class="ot">&lt;-</span> <span class="fu">summary</span>(fit.nolineal)<span class="sc">$</span>sigma</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.084</span> <span class="co"># dato del problema, es decir, la absorbancia de la muestra</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Determinación de la incertidumbre estándar combinada <span class="math inline">\(u_{\hat{x}}\)</span> a través de la expresión:</li>
@@ -642,21 +602,13 @@ u_{\hat{x}}^2 = \left( \frac{\partial{\hat{x}}}{\partial{y_{0}}}\right) ^{2} (u_
 \]</span></p>
 <p>¡Listo! ahora debemos evaluar las expresiones. Pero como soy flojo, prefiero usar el excelente package <code>metRology</code> que hará todo el trabajo por mí:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metRology) <span class="co"># cargamos la librería</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'metRology'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    cbind, rbind</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>expr <span class="ot">&lt;-</span> <span class="fu">expression</span>((<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c)) <span class="co"># ecuación de medición</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> a, <span class="at">b =</span> b, <span class="at">c =</span> c, <span class="at">y0 =</span> y0) <span class="co"># valores de cada X input</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(ua, ub, uc, uy0) <span class="co"># incertidumbres estándar de cada X input</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>u.GUM <span class="ot">&lt;-</span> <span class="fu">uncert</span>(expr, x, u, <span class="at">method =</span> <span class="st">'GUM'</span>) <span class="co"># Usamos el método GUM</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>u.GUM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metRology) <span class="co"># cargamos la librería</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>expr <span class="ot">&lt;-</span> <span class="fu">expression</span>((<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c)) <span class="co"># ecuación de medición</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> a, <span class="at">b =</span> b, <span class="at">c =</span> c, <span class="at">y0 =</span> y0) <span class="co"># valores de cada X input</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(ua, ub, uc, uy0) <span class="co"># incertidumbres estándar de cada X input</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>u.GUM <span class="ot">&lt;-</span> <span class="fu">uncert</span>(expr, x, u, <span class="at">method =</span> <span class="st">'GUM'</span>) <span class="co"># Usamos el método GUM</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>u.GUM</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Uncertainty evaluation
@@ -681,29 +633,29 @@ u(y):  0.4774807 </code></pre>
 </div>
 <p>¿What? ¿Por qué obtuvimos una incertidumbre estándar de 0.477 y no la que calculamos con la ecuación de la norma ISO 0.265? Por la sencilla razón de que los parámetros de un modelo cuadrático no son independientes, sus covarianzas no son 0. Es más, algunas de las covarianzas son negativas. Observe la siguiente figura que fue obtenida simulando curvas de calibración cuadráticas. En la figura se muestra las correlaciones entre los tres parámetros del modelo no lineal:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simularemos p = 200 curvas de calibración cuadráticas a partir de los datos </span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># empíricos </span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="co"># Número de simulaciones</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>a.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro a</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>b.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro b</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>c.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro c</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos un loop</span></span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>p){</span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  x.sim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">66</span>, <span class="at">by =</span> <span class="dv">6</span>)</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  y.sim <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>x.sim <span class="sc">+</span> c<span class="sc">*</span>x.sim<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(x.sim), <span class="dv">0</span>, uy0)</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>  fit.nolineal.sim <span class="ot">&lt;-</span> <span class="fu">lm</span>(y.sim <span class="sc">~</span> x.sim <span class="sc">+</span> <span class="fu">I</span>(x.sim<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  a.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">1</span>]</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>  b.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">2</span>]</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>  c.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">3</span>]</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a><span class="co"># guardamos los parámetros simulados en un data frame que llamamos param.sim</span></span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>param.sim <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a.sim, b.sim, c.sim) </span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>                                                </span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a><span class="co"># graficamos los parámetros simulados</span></span>
-<span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(param.sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simularemos p = 200 curvas de calibración cuadráticas a partir de los datos </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># empíricos </span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="co"># Número de simulaciones</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>a.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro a</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>b.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro b</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>c.sim <span class="ot">&lt;-</span> <span class="fu">numeric</span>(p) <span class="co"># vector que guardará el parámetro c</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacemos un loop</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>p){</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  x.sim <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">12</span>, <span class="dv">66</span>, <span class="at">by =</span> <span class="dv">6</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  y.sim <span class="ot">&lt;-</span> a <span class="sc">+</span> b<span class="sc">*</span>x.sim <span class="sc">+</span> c<span class="sc">*</span>x.sim<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="fu">length</span>(x.sim), <span class="dv">0</span>, uy0)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  fit.nolineal.sim <span class="ot">&lt;-</span> <span class="fu">lm</span>(y.sim <span class="sc">~</span> x.sim <span class="sc">+</span> <span class="fu">I</span>(x.sim<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  a.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">1</span>]</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  b.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">2</span>]</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  c.sim[i] <span class="ot">&lt;-</span> fit.nolineal.sim<span class="sc">$</span>coeff[<span class="dv">3</span>]</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="co"># guardamos los parámetros simulados en un data frame que llamamos param.sim</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>param.sim <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a.sim, b.sim, c.sim) </span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>                                                </span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="co"># graficamos los parámetros simulados</span></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(param.sim)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -711,10 +663,10 @@ u(y):  0.4774807 </code></pre>
 <p>Se advierte claramente que existe una correlación negativa entre los parámetros <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>, además entre <span class="math inline">\(b\)</span> y <span class="math inline">\(c\)</span>. La correlación entre <span class="math inline">\(a\)</span> y <span class="math inline">\(c\)</span> es positiva. En rigor, habría que incorporar las derivadas parciales cruzadas y las covarianzas entre los parámetros. De sólo pensarlo, me dan ganas de procastinar aún más la escritura de este post, así que recurriremos al package <code>metRology</code>.</p>
 <p>La parte “fácil” es obtener la matriz de covarianzas de los parámetros del modelo con el comando <code>vcov</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">vcov</span>(fit.nolineal)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(v) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>) <span class="co"># solo cosmética para que aparezcan los nombres</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(v) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>) <span class="co"># de los parámetros (es opcional)</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">vcov</span>(fit.nolineal)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(v) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>) <span class="co"># solo cosmética para que aparezcan los nombres</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(v) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>) <span class="co"># de los parámetros (es opcional)</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>              a             b             c
 a  6.124524e-06 -3.337187e-07  3.910406e-09
@@ -724,8 +676,8 @@ c  3.910406e-09 -2.491926e-10  3.194776e-12</code></pre>
 </div>
 <p>La diagonal de esta matriz es precisamente la incertidumbre estándar al cuadrado de los parámetros (a.k.a sus varianzas). Si queremos, también podemos expresarla como matriz de correlaciones con el comando <code>cov2cor</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>param.cor <span class="ot">&lt;-</span> <span class="fu">cov2cor</span>(v)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>param.cor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>param.cor <span class="ot">&lt;-</span> <span class="fu">cov2cor</span>(v)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>param.cor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           a          b          c
 a  1.0000000 -0.9494193  0.8840269
@@ -736,12 +688,12 @@ c  0.8840269 -0.9815865  1.0000000</code></pre>
 <p>En la diagonal de esta matriz obviamente esperamos correlación 1. Se observa claramente la alta correlación entre los parámetros, como dijimos anteriormente, algunas de ellas son negativas.</p>
 <p>La parte “difícil” es que debemos incorporar la variable señal instrumental de la muestra problema <span class="math inline">\(y_{0}\)</span>, la cual obviamente es independiente de los parámetros del modelo:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorporamos la variable y0 que es independiente de los parámetros</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">rbind</span>(v, <span class="at">y0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">3</span>)) </span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">cbind</span>(v, <span class="at">y0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>))</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">4</span>, <span class="dv">4</span>] <span class="ot">&lt;-</span> uy0<span class="sc">^</span><span class="dv">2</span> <span class="co"># Asignamos al elemento de la 4a fila y 4a columna  </span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># la varianza de y0</span></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Incorporamos la variable y0 que es independiente de los parámetros</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">rbind</span>(v, <span class="at">y0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">3</span>)) </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">cbind</span>(v, <span class="at">y0 =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>))</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">4</span>, <span class="dv">4</span>] <span class="ot">&lt;-</span> uy0<span class="sc">^</span><span class="dv">2</span> <span class="co"># Asignamos al elemento de la 4a fila y 4a columna  </span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># la varianza de y0</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>v</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               a             b             c           y0
 a   6.124524e-06 -3.337187e-07  3.910406e-09 0.000000e+00
@@ -752,8 +704,8 @@ y0  0.000000e+00  0.000000e+00  0.000000e+00 2.186147e-06</code></pre>
 </div>
 <p>Ahora, incorporamos las covarianzas en el cálculo por método GUM:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>u.GUM.cov <span class="ot">&lt;-</span> <span class="fu">uncert</span>(expr, x, <span class="at">cov =</span> v, <span class="at">method =</span> <span class="st">"GUM"</span>)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>u.GUM.cov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>u.GUM.cov <span class="ot">&lt;-</span> <span class="fu">uncert</span>(expr, x, <span class="at">cov =</span> v, <span class="at">method =</span> <span class="st">"GUM"</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>u.GUM.cov</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Uncertainty evaluation
@@ -784,26 +736,18 @@ u(y):  0.2651904 </code></pre>
 <p>Sería super simple si usamos el package <code>metRology</code>, el problema es que el package lanza un error numérico cuando existen covarianzas negativas. Probé el ejemplo que incluye el manual de <code>metRology</code> y el error se repite. Es un problema al evaluar la suma de las correlaciones. Le consulté al autor Steve Ellison, sin embargo, a la fecha (09 de junio 2020) aún no tengo respuesta, a pesar de que Steve siempre responde las consultas en forma muy expedita. Otros usuarios han tenido un problema similar y se ha abierto un hilo en <a href="https://stackoverflow.com/questions/60971950/error-in-eigensigma-symmetric-true-0-x-0-matrix-in-metrology-uncertmc-wit/62119518#62119518">stackoverflow</a>.</p>
 <p>Por lo tanto, implementamos el método de Monte Carlo “a mano” utilizando el package <code>MASS</code> el cual permite generar muestras aleatorias multivariadas incluyendo las correlaciones:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No funciona metRology MC así que lo hicimos a mano</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS) <span class="co"># cargamos la librería</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'MASS'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:patchwork':
-
-    area</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos n muestras aleatorias multivariadas, cuyas medias </span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># corresponden a los valores de a, b, c e y0</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># La matriz de covarianza Sigma = v la calculamos anteriormente</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Para que Ud. obtenga los mismos resultados</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(<span class="at">n =</span> <span class="dv">10000</span>, <span class="at">mu =</span> <span class="fu">c</span>(a, b, c, y0), <span class="at">Sigma =</span> v, <span class="at">empirical =</span> T)</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(muestra.MC) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'y0'</span>) <span class="co"># solo cosmética</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(muestra.MC) <span class="co"># lo guardamos como data.frame</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(muestra.MC) <span class="co"># muestra las primeras n = 6 simulaciones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># No funciona metRology MC así que lo hicimos a mano</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS) <span class="co"># cargamos la librería</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Generamos n muestras aleatorias multivariadas, cuyas medias </span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="co"># corresponden a los valores de a, b, c e y0</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># La matriz de covarianza Sigma = v la calculamos anteriormente</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Para que Ud. obtenga los mismos resultados</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(<span class="at">n =</span> <span class="dv">10000</span>, <span class="at">mu =</span> <span class="fu">c</span>(a, b, c, y0), <span class="at">Sigma =</span> v, <span class="at">empirical =</span> T)</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(muestra.MC) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'y0'</span>) <span class="co"># solo cosmética</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(muestra.MC) <span class="co"># lo guardamos como data.frame</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(muestra.MC) <span class="co"># muestra las primeras n = 6 simulaciones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             a           b             c         y0
 1 -0.006371785 0.007697494 -2.535336e-05 0.08771566
@@ -816,7 +760,7 @@ Attaching package: 'MASS'</code></pre>
 </div>
 <p>Cada fila es una simulación. Si, por ejemplo, calculamos el promedio de cada variable simulada, obtenemos un valor similar a los valores empíricos. A mayor número de simulaciones, más nos acercamos a valores que asumimos como verdaderos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(muestra.MC, <span class="dv">2</span>, mean) <span class="co"># promedio de cada columna</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(muestra.MC, <span class="dv">2</span>, mean) <span class="co"># promedio de cada columna</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            a             b             c            y0 
 -5.621212e-03  7.670455e-03 -2.504209e-05  8.400000e-02 </code></pre>
@@ -824,29 +768,15 @@ Attaching package: 'MASS'</code></pre>
 </div>
 <p>Bien, lo que tenemos que hacer es que en cada simulación debemos calcular la concentración de la muestra:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cargaré estas librerías sólo para facilitar la manipulación de los datos</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ lubridate 1.9.3     ✔ tibble    3.2.1
-✔ purrr     1.0.2     ✔ tidyr     1.3.0
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ ggpp::annotate()   masks ggplot2::annotate()
-✖ tidyr::extract()   masks magrittr::extract()
-✖ dplyr::filter()    masks stats::filter()
-✖ dplyr::lag()       masks stats::lag()
-✖ dplyr::select()    masks MASS::select()
-✖ purrr::set_names() masks magrittr::set_names()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos una nueva variable llamada x.hat que corresponde a la concentración de</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="co"># la muestra</span></span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> muestra.MC <span class="sc">%&gt;%</span> </span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x.hat =</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c))</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(muestra.MC) <span class="co"># muestra las primeras n = 6 simulaciones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cargaré estas librerías sólo para facilitar la manipulación de los datos</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos una nueva variable llamada x.hat que corresponde a la concentración de</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># la muestra</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>muestra.MC <span class="ot">&lt;-</span> muestra.MC <span class="sc">%&gt;%</span> </span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x.hat =</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">4</span><span class="sc">*</span>(a <span class="sc">-</span> y0)<span class="sc">*</span>c))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>c))</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(muestra.MC) <span class="co"># muestra las primeras n = 6 simulaciones</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             a           b             c         y0    x.hat
 1 -0.006371785 0.007697494 -2.535336e-05 0.08771566 12.75935
@@ -859,30 +789,30 @@ Attaching package: 'MASS'</code></pre>
 </div>
 <p>La última columna corresponde a la concentración calculada para cada simulación. Por lo tanto, si queremos obtener la incertidumbre estándar de la concentración, basta calcular la desviación estándar de esa columna:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>mu.x.hat.MC <span class="ot">&lt;-</span> <span class="fu">mean</span>(muestra.MC<span class="sc">$</span>x.hat) <span class="co"># valor promedio de concentración</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>u.x.hat.MC <span class="ot">&lt;-</span> <span class="fu">sd</span>(muestra.MC<span class="sc">$</span>x.hat) <span class="co"># incertidumbre estándar de la concentración</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>u.x.hat.MC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mu.x.hat.MC <span class="ot">&lt;-</span> <span class="fu">mean</span>(muestra.MC<span class="sc">$</span>x.hat) <span class="co"># valor promedio de concentración</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>u.x.hat.MC <span class="ot">&lt;-</span> <span class="fu">sd</span>(muestra.MC<span class="sc">$</span>x.hat) <span class="co"># incertidumbre estándar de la concentración</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>u.x.hat.MC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.265344</code></pre>
 </div>
 </div>
 <p>Se obtiene una incertidumbre estándar de calibración de 0.265 mg/L, la cual es consistente con los otros métodos estudiados. La siguiente figura muestra el histograma de las concentraciones simuladas:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(muestra.MC<span class="sc">$</span>x.hat, </span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">20</span>,</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Concentraciones simuladas por Monte Carlo'</span>,</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Concentración [mg/L]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(muestra.MC<span class="sc">$</span>x.hat, </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">20</span>,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">'Concentraciones simuladas por Monte Carlo'</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Concentración [mg/L]'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/plot.u.MC-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Finalmente, la siguiente tabla resume los resultados de los tres métodos considerando la incertidumbre estándar de calibración:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Ix<span class="sc">/</span>t, u.GUM<span class="sc">$</span>u.y, u.GUM.cov<span class="sc">$</span>u.y, u.x.hat.MC)</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla, </span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">rownames =</span> <span class="cn">NA</span>,</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">'ISO'</span>, <span class="st">'GUM'</span>, <span class="st">'GUM/Covarianzas'</span>, <span class="st">'Monte Carlo'</span>),</span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">'l'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Ix<span class="sc">/</span>t, u.GUM<span class="sc">$</span>u.y, u.GUM.cov<span class="sc">$</span>u.y, u.x.hat.MC)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla, </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">rownames =</span> <span class="cn">NA</span>,</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">'ISO'</span>, <span class="st">'GUM'</span>, <span class="st">'GUM/Covarianzas'</span>, <span class="st">'Monte Carlo'</span>),</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">align =</span> <span class="st">'l'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>

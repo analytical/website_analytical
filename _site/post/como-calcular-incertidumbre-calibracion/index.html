@@ -227,9 +227,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -312,9 +309,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -327,26 +321,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ok, hay varias formas de implementar los cálculos de incertidumbre de calibración de la ecuación @ref(eq:ux0). Podríamos utilizar Excel para obtener cada uno de los términos, pero eso lo ilustraremos en otro post. En esta oportunidad utilizaremos el software <code>R</code>. Este software posee varias librerías o packages especializados en el cálculo de incertidumbre en química analítica, por ejemplo: <code>metRology</code> y <code>chemCal</code>. En este post utilizaremos el segundo, pues entrega en forma directa el cálculo de la incertidumbre de calibración:</p>
 <p>{{% callout warning %}} Si no tienes instalado el package <code>chemCal</code> utiliza el comando <code>install.packages('chemCal')</code>. Una vez instalado procede con el siguiente código.{{% /callout %}}</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación del modelo de calibración lineal, al que llamaremos fit.lin </span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (En otro post se profundizará sobre otros modelos de calibración en R)</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fit.lin <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> d)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular un valor de respuesta de la muestra problema, es decir, y0.</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sólo por conveniencia simularemos que y0 = 0.200 UA, es decir, más o menos</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># en el centro de la curva:</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.200</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar la librería chemCal con el comando 'library':</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chemCal)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular la concentración de la muestra problema, x0, a partir de su señal</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># instrumental y0, junto con la incertidumbre estándar de calibración u(x0) e</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co"># incertidumbre expandida U(x0) con un 95% de confianza:</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">inverse.predict</span>(fit.lin, <span class="at">newdata =</span> y0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación del modelo de calibración lineal, al que llamaremos fit.lin </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (En otro post se profundizará sobre otros modelos de calibración en R)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>fit.lin <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> d)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular un valor de respuesta de la muestra problema, es decir, y0.</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sólo por conveniencia simularemos que y0 = 0.200 UA, es decir, más o menos</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># en el centro de la curva:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>y0 <span class="ot">&lt;-</span> <span class="fl">0.200</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar la librería chemCal con el comando 'library':</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(chemCal)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular la concentración de la muestra problema, x0, a partir de su señal</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># instrumental y0, junto con la incertidumbre estándar de calibración u(x0) e</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># incertidumbre expandida U(x0) con un 95% de confianza:</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">inverse.predict</span>(fit.lin, <span class="at">newdata =</span> y0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Prediction
 [1] 4.970492
