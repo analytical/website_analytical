@@ -3,6 +3,18 @@ title: "Herramientas de Diseño e Interpretación Estadística de las Mediciones
 description: "Facultad de Ciencias Químicas y Farmacéuticas | Universidad de Chile <br> **AGOSTO 2024**"
 image: daio.png
 title-block-banner: true
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: full
+    grid:
+      sidebar-width: 300px
+      body-width: 700px
+      margin-width: 300px
+      gutter-width: 1.5rem
+
 ---
 
 # Objetivo

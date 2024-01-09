@@ -2,26 +2,38 @@
 title: ""
 image: logo_analytical.png
 toc: false
+format:
+  html: 
+    theme: cosmo
+    page-layout: full
 about:
   template: trestles
-  image-width: "700px"
+  image-width: "500px"
   links:
     - icon: linkedin
-      text: LinkeIn
+      text: LinkedIn
       href: www.linkedin.com/in/cjgomezs
     - icon: envelope
       text: Contáctanos
       href: "mailto:<cvgomez@gmail.com>"
 ---
 
-## **Nuestras competencias** 
+<!-- ::: {style="font-size: 1.5em;"} -->
+<!-- <span style="font-family: Cascadia Code;"><strong>Estadística aplicada en Química</strong></span> -->
+<!-- ::: -->
 
-Métodos Estadísticos Modernos aplicados en Química Analítica 
+::: {style="font-size: 1.5em;"}
+_Extraemos la mayor cantidad de información de sus datos analíticos a través de
+ la aplicación de métodos estadísticos **modernos** de análisis y un diseño experimental óptimo_
+:::
 
-Metrología Química
+---
+
 
 
 ## Training
+
+Ofrecemos cursos _in-house_ en áreas 
 
 1. Estadística aplicada al laboratorio analítico
 2. Estimación de incertidumbre en mediciones químicas
