@@ -41,15 +41,16 @@ Consultor y auditor de laboratorios nacionales y latinoamericanos en las áreas 
 
 Fui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.
 
-```{r, eval = F}
+```{r, echo = F}
 ## Link in Github repo
+library(downloadthis)
 download_link(
-  link = "https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf",
-  button_label = "Download pdf file",
+  link = "https://github.com/analytical/website_analytical/blob/main/CV_cgomez.pdf",
+  button_label = "Descargar CV",
   button_type = "danger",
   has_icon = TRUE,
   icon = "fa fa-save",
-  self_contained = FALSE
+  self_contained = T
 )
 ```
 

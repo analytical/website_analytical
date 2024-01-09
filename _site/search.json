@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.04423931"
+    "text": "mean(rnorm(100))\n\n[1] -0.1226608"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.04423931"
+    "text": "mean(rnorm(100))\n\n[1] -0.1226608"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -123,14 +123,14 @@
     "href": "about.html",
     "title": "Carlos Gómez",
     "section": "",
-    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n## Link in Github repo\ndownload_link(\n  link = \"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf\",\n  button_label = \"Download pdf file\",\n  button_type = \"danger\",\n  has_icon = TRUE,\n  icon = \"fa fa-save\",\n  self_contained = FALSE\n)"
+    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n\n\n Descargar CV"
   },
   {
     "objectID": "about.html#educación",
     "href": "about.html#educación",
     "title": "Carlos Gómez",
     "section": "",
-    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n## Link in Github repo\ndownload_link(\n  link = \"https://github.com/fmmattioni/downloadthis/raw/master/inst/example/file_1.pdf\",\n  button_label = \"Download pdf file\",\n  button_type = \"danger\",\n  has_icon = TRUE,\n  icon = \"fa fa-save\",\n  self_contained = FALSE\n)"
+    "text": "2003 - 2006 | Magíster en Estadística Pontificia Universidad Católica de Chile\n1999 - 2004 | Químico Universidad de Chile\n1994 - 2002 | Bioquímico Universidad de Chile\n Metrólogo Químico especializado en con más de 20 años de experiencia en la aplicación de métodos estadísticos modernos en Química.\nConsultor y auditor de laboratorios nacionales y latinoamericanos en las áreas de metrología química, validación de métodos, cálculo de incertidumbre, preparación de materiales de referencia y ensayos de intercomparación.\nFui representante del Sistema Interamericano de Metrología (SIM) en el Key Comparison Working Group (KCWG) del CCQM a cargo de evaluar las Capacidades de Medición y Calibración (CMC) de los Institutos Nacionales de Metrología del SIM.\n\n\n\n Descargar CV"
   },
   {
     "objectID": "cursos/DAIO_uchile/index.html",
