@@ -3,7 +3,7 @@
     "path": "C:/Users/cvgom/OneDrive/Analytical/Pagina_Web/website_analytical/about.qmd",
     "project_path": "about.qmd",
     "type": "quarto_markdown",
-    "hash": "0",
+    "hash": "1424646869",
     "contents": "",
     "dirty": false,
     "created": 1704815773649.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "53,28",
-        "scrollLine": "41"
+        "cursorPosition": "51,22",
+        "scrollLine": "30"
     },
     "folds": "",
-    "lastKnownWriteTime": 1704822196,
+    "lastKnownWriteTime": 1704824201,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1704822196625,
+    "last_content_update": 1704824201788,
     "read_only": false,
     "read_only_alternatives": []
 }

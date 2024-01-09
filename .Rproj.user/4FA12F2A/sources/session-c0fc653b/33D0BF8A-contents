@@ -45,7 +45,7 @@ Fui representante del Sistema Interamericano de Metrología (SIM) en el Key Comp
 ## Link in Github repo
 library(downloadthis)
 download_link(
-  link = "https://github.com/analytical/website_analytical/blob/main/CV_cgomez.pdf",
+  link = "https://1drv.ms/b/s!AuF6FPVWruwD0rIG-VR3KgVvhmRfGQ?e=3hcpUp",
   button_label = "Descargar CV",
   button_type = "danger",
   has_icon = TRUE,
