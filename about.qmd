@@ -45,7 +45,7 @@ Fui representante del Sistema Interamericano de Metrología (SIM) en el Key Comp
 ## Link in Github repo
 library(downloadthis)
 download_link(
-  link = "https://1drv.ms/b/s!AuF6FPVWruwD0rIG-VR3KgVvhmRfGQ?e=3hcpUp",
+  link = "https://public.sn.files.1drv.com/y4m85M5mEeDbBXFVHt23XvAhzzK1oWKJUL8OGVFV8foi2IXnInOE47iC2AHUm-JVWFdQN6UPDp-geHgISyOUUsuPJRUJXzpU7sy00I7TlPIofc2MVffclrYO5FatrFrC21JmYaXodzBW4aAEBoRV_NRHHeKzFXsK1n0MSLAtpYFn5q5oWgyiPv4QYQgSmRmVdTMsWO_EEkphVjwH9P0s-EJP0Lj4U3M8mM3hndCi8o5FsQ?AVOverride=1",
   button_label = "Descargar CV",
   button_type = "danger",
   has_icon = TRUE,
@@ -53,5 +53,6 @@ download_link(
   self_contained = F,
   class = "button_analytical"
 )
+
 ```
 
