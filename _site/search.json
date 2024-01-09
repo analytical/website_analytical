@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.06816268"
+    "text": "mean(rnorm(100))\n\n[1] 0.01823922"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] -0.06816268"
+    "text": "mean(rnorm(100))\n\n[1] 0.01823922"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -158,7 +158,7 @@
     "href": "index.html#training",
     "title": "<strong>Analytical</strong>",
     "section": "Training",
-    "text": "Training\nDesarrollamos cursos in-house en métodos estadísticos aplicados en el laboratorio analítico:\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas y microbiológicas\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528\nValidación de procesos farmacéuticos"
+    "text": "Training\nDesarrollamos cursos in-house sobre métodos estadísticos aplicados en el laboratorio analítico:\n\nEstadística aplicada al laboratorio analítico\nEstimación de incertidumbre en mediciones químicas y microbiológicas\nValidación de métodos analíticos y microbiológicos\nControl Estadístico de la Calidad en el laboratorio\nEvaluación de ensayos de intercomparación ISO 13528\nValidación de procesos farmacéuticos"
   },
   {
     "objectID": "post/como-calcular-incertidumbre-calibracion/index.html",
