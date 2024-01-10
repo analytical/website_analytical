@@ -1,5 +1,0 @@
-freeze: auto
-knitr:
-  opts_chunk:
-    warning: false
-    message: false

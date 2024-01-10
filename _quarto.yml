@@ -39,7 +39,7 @@ website:
         file: blog.qmd
       - text: "Libro"
         file: libro.qmd
-      - text: "Quénes somos"
+      - text: "Quiénes somos"
         file: about.qmd
   
   # sidebar:

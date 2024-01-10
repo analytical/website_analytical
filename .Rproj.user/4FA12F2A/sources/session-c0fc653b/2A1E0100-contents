@@ -1,0 +1,102 @@
+---
+title: "Herramientas de Diseño e Interpretación Estadística de las Mediciones"
+description: "Facultad de Ciencias Químicas y Farmacéuticas | Universidad de Chile <br> **AGOSTO 2024**"
+image: daio.png
+title-block-banner: true
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    page-layout: full
+    grid:
+      sidebar-width: 300px
+      body-width: 700px
+      margin-width: 300px
+      gutter-width: 1.5rem
+
+---
+
+# Objetivo
+El objetivo de este curso es entregar conocimientos para la aplicación de 
+herramientas estadísticas **modernas**, que permitan interpretar los resultados 
+analíticos desde el punto de vista estadístico y metrológico. 
+
+
+## ¿Qué estudiaremos?
+En este curso utilizamos extensivamente métodos de simulación en **lenguaje
+de programción R**, con el objetivo de entender los métodos estadísticos aplicados 
+en Química Analítica, sus alcances y suposiciones:
+
+- ¿Y si mis datos no son Normales?¿cómo los analizo?
+- Necesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo 
+obtengo?
+- ¿Cómo minimizar la incertidumbre de calibración?
+- Necesito comparar el desempeño de 5 analistas en la determinación de un 
+antibiótico en alimentos ¿cuál método estadístico debo aplicar?
+- ¿Cómo se interpreta correctamente un p-value?
+- Del 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al 
+método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la 
+precisión intermedia de los analistas?
+- Obtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar 
+que la curva de calibración es lineal?
+- ¿Cuál es la diferencia entre el r y r²?
+- ¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?
+- ¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la 
+verdadera media esté dentro del intervalo?
+- ¿Cómo comparo 2 métodos analíticos si los datos no son normales?
+
+Y otros tópicos de interés para profesionales de laboratorios de ensayos 
+físico-químicos y microbiológicos.
+
+
+
+<span style="color:#F74464;"><strong>Más información:</strong></span>
+
+
+
+[![](logo_uchile.png){width=20% height=20% fig-align="left"}](https://www.postgradoquimica.cl/curso-posgrado-herramientas-diseno-interpretacion-estadistica-mediciones-version-semipresencial-2/)
+
+## El curso por dentro
+
+::: {#fig-RefCardR}
+<iframe width="100%" height="600" src="daio_sample.pdf"></iframe>
+Una muestra del curso
+:::
+
+
+<script type="text/javascript" src="https://raw.github.com/mozilla/pdf.js/gh-pages/build/pdf.js"></script>
+<script type="text/javascript">
+function renderPDF(url, canvasContainer, options) {
+    var options = options || { scale: 1 };
+
+    function renderPage(page) {
+        var viewport = page.getViewport(options.scale);
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+        var renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        canvasContainer.appendChild(canvas);
+
+        page.render(renderContext);
+    }
+
+    function renderPages(pdfDoc) {
+        for(var num = 1; num <= pdfDoc.numPages; num++)
+            pdfDoc.getPage(num).then(renderPage);
+    }
+    PDFJS.disableWorker = true;
+    PDFJS.getDocument(url).then(renderPages);
+}   
+</script> 
+
+<div id="holder"></div>
+
+<script type="text/javascript">
+renderPDF('daio_sample.pdf', document.getElementById('holder'));
+</script>  

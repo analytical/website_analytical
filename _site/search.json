@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.09819931"
+    "text": "mean(rnorm(100))\n\n[1] 0.02082319"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.09819931"
+    "text": "mean(rnorm(100))\n\n[1] 0.02082319"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -130,7 +130,7 @@
     "href": "cursos/DAIO_uchile/index.html",
     "title": "Herramientas de Diseño e Interpretación Estadística de las Mediciones",
     "section": "",
-    "text": "El objetivo de este curso es entregar conocimientos para la aplicación de herramientas estadísticas modernas, que permitan interpretar los resultados analíticos desde el punto de vista estadístico y metrológico.\n\n\nEn este curso utilizamos extensivamente métodos de simulación en lenguaje de programción R, con el objetivo de entender los métodos estadísticos aplicados en Química Analítica, sus alcances y suposiciones:\n\n¿Y si mis datos no son Normales?¿cómo los analizo?\nNecesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo obtengo?\n¿Cómo minimizar la incertidumbre de calibración?\nNecesito comparar el desempeño de 5 analistas en la determinación de un antibiótico en alimentos ¿cuál método estadístico debo aplicar?\n¿Cómo se interpreta correctamente un p-value?\nDel 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la precisión intermedia de los analistas?\nObtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar que la curva de calibración es lineal?\n¿Cuál es la diferencia entre el r y r²?\n¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?\n¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la verdadera media esté dentro del intervalo?\n¿Cómo comparo 2 métodos analíticos si los datos no son normales?\n\nY otros tópicos de interés para profesionales de laboratorios de ensayos físico-químicos y microbiológicos.\nMás información:"
+    "text": "El objetivo de este curso es entregar conocimientos para la aplicación de herramientas estadísticas modernas, que permitan interpretar los resultados analíticos desde el punto de vista estadístico y metrológico.\n\n\nEn este curso utilizamos extensivamente métodos de simulación en lenguaje de programción R, con el objetivo de entender los métodos estadísticos aplicados en Química Analítica, sus alcances y suposiciones:\n\n¿Y si mis datos no son Normales?¿cómo los analizo?\nNecesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo obtengo?\n¿Cómo minimizar la incertidumbre de calibración?\nNecesito comparar el desempeño de 5 analistas en la determinación de un antibiótico en alimentos ¿cuál método estadístico debo aplicar?\n¿Cómo se interpreta correctamente un p-value?\nDel 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la precisión intermedia de los analistas?\nObtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar que la curva de calibración es lineal?\n¿Cuál es la diferencia entre el r y r²?\n¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?\n¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la verdadera media esté dentro del intervalo?\n¿Cómo comparo 2 métodos analíticos si los datos no son normales?\n\nY otros tópicos de interés para profesionales de laboratorios de ensayos físico-químicos y microbiológicos.\nMás información:\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Una muestra del curso"
   },
   {
     "objectID": "cursos/DAIO_uchile/index.html#qué-estudiaremos",
@@ -138,6 +138,13 @@
     "title": "Herramientas de Diseño e Interpretación Estadística de las Mediciones",
     "section": "",
     "text": "En este curso utilizamos extensivamente métodos de simulación en lenguaje de programción R, con el objetivo de entender los métodos estadísticos aplicados en Química Analítica, sus alcances y suposiciones:\n\n¿Y si mis datos no son Normales?¿cómo los analizo?\nNecesito un intervalo de confianza para la precisión de repetibilidad ¿cómo lo obtengo?\n¿Cómo minimizar la incertidumbre de calibración?\nNecesito comparar el desempeño de 5 analistas en la determinación de un antibiótico en alimentos ¿cuál método estadístico debo aplicar?\n¿Cómo se interpreta correctamente un p-value?\nDel 100% de variabilidad observada en un proceso planta: ¿cuánto se debe al método analítico?¿cuánto aporta la variabilidad entre los lotes?¿cuál es la precisión intermedia de los analistas?\nObtuve un coeficiente de correlación de r = 0,999 ¿es suficiente para probar que la curva de calibración es lineal?\n¿Cuál es la diferencia entre el r y r²?\n¿Cómo estimo la incertidumbre de una curva de calibración no lineal cuadrática?\n¿Por qué un intervalo de confianza al 95% no es la probabilidad de que la verdadera media esté dentro del intervalo?\n¿Cómo comparo 2 métodos analíticos si los datos no son normales?\n\nY otros tópicos de interés para profesionales de laboratorios de ensayos físico-químicos y microbiológicos.\nMás información:"
+  },
+  {
+    "objectID": "cursos/DAIO_uchile/index.html#el-curso-por-dentro",
+    "href": "cursos/DAIO_uchile/index.html#el-curso-por-dentro",
+    "title": "Herramientas de Diseño e Interpretación Estadística de las Mediciones",
+    "section": "",
+    "text": "Figure 1: Una muestra del curso"
   },
   {
     "objectID": "about.html",
