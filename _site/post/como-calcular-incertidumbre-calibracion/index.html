@@ -196,23 +196,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>¿Qué es y cómo estimar la incertidumbre de una curva de calibración?</p>
 </blockquote>
 <p>La incertidumbre de calibración, en adelante <span class="math inline">\(u(x_{0})\)</span>, es aquella que se propaga cuando obtenemos la concentración de un mensurando al <em>interpolar</em> una señal instrumental (por ejemplo, absorbancia o área cromatográfica) en una curva de calibración. Básicamente, esta incertidumbre sólo da cuenta del error aleatorio del instrumento y no incopora la incertidumbre de los calibrantes, al menos cuando se utiliza el modelo de calibración clásico:</p>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-lin"><span class="math display">\[
   y = \beta_{0} + \beta_{1} x + \epsilon
-    (\#eq:lin)
-\end{equation}\]</span></p>
+\tag{1}\]</span></span></p>
 <p>donde <span class="math inline">\(y\)</span> es la respuesta instrumental, <span class="math inline">\(\beta_{0}\)</span> es el intercepto, <span class="math inline">\(\beta_{1}\)</span> es la pendiente y <span class="math inline">\(\epsilon\)</span> es un error aleatorio Normal que tiene media <span class="math inline">\(\mu_{\epsilon} = 0\)</span> y varianza <span class="math inline">\(\sigma_{y/x}^2\)</span>. Note de la ecuación @ref(eq:lin) que lo único aleatorio es <span class="math inline">\(\epsilon\)</span>, por lo tanto, el intercepto <span class="math inline">\(\beta_{0}\)</span> y la pendiente <span class="math inline">\(\beta_{1}\)</span> son <em>fijos</em>. Lo que hacemos cuando aplicamos, por ejemplo, el método de los mínimos cuadrados es estimar estos parámetros y, en estadística, todas las estimaciones tienen un error asociado.</p>
-<p>A partir de la ecuación @ref(eq:lin) obtenemos la concentración de una muestra problema <span class="math inline">\(x_{0}\)</span> cuya señal instrumental es <span class="math inline">\(y_{0}\)</span>:</p>
-<p><span class="math display">\[\begin{equation}
+<p>A partir de la ecuación <a href="#eq-lin">1</a> obtenemos la concentración de una muestra problema <span class="math inline">\(x_{0}\)</span> cuya señal instrumental es <span class="math inline">\(y_{0}\)</span>:</p>
+<p><span id="eq-x0"><span class="math display">\[
   x_{0} = \frac{y_{0} - \beta_{0}}{\beta_{1}}
-    (\#eq:x0)
-\end{equation}\]</span></p>
-<p>Si aplicáramos la guía GUM para obtener la incertidumbre estándar de calibración <span class="math inline">\(u(x_{0})\)</span> sería bastante latoso-engorroso, pues hay unas covarianzas no muy amistosas entre pendiente e intercepto. Afortunadamente <span class="math inline">\(u(x_{0})\)</span> puede aproximarse muy bien a través de la ecuación @ref(eq:ux0):</p>
-<p><span class="math display">\[\begin{equation}
+\tag{2}\]</span></span></p>
+<p>Si aplicáramos la guía GUM para obtener la incertidumbre estándar de calibración <span class="math inline">\(u(x_{0})\)</span> sería bastante latoso-engorroso, pues hay unas covarianzas no muy amistosas entre pendiente e intercepto. Afortunadamente <span class="math inline">\(u(x_{0})\)</span> puede aproximarse muy bien a través de la ecuación <a href="#eq-ux0">3</a>:</p>
+<p><span id="eq-ux0"><span class="math display">\[
   u(x_{0}) = \frac{\sigma_{y/x}}{\beta_{1}}
   \sqrt{\frac{1}{n} + \frac{1}{m_{0}} + \frac{(x_{0} - \overline{x})^2}
   {\sum_{i}^{n} (x_{i} - \overline{x})^2}}
-    (\#eq:ux0)
-\end{equation}\]</span></p>
+\tag{3}\]</span></span></p>
 <p>Vamos viendo dijo el ciego:</p>
 <ul>
 <li><span class="math inline">\(\sigma_{y/x}\)</span> es la desviación estándar del error aleatorio <span class="math inline">\(\epsilon\)</span></li>
@@ -220,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><span class="math inline">\(m_{0}\)</span> es el número de replicado independientes de la muestra problema</li>
 <li><span class="math inline">\(\overline{x}\)</span> es el promedio de la concentraciones de los calibrantes</li>
 </ul>
-<p>Esta incertidumbre se puede observar en la figura @ref(fig:banda), la cual fue obtenida mediante simulación en lenguaje <code>R</code>:</p>
+<p>Esta incertidumbre se puede observar en la figura <a href="#fig-banda">1</a>, la cual fue obtenida mediante simulación en lenguaje <code>R</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
@@ -230,12 +227,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-banda" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/banda-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Incertidumbre de calibración</figcaption>
+<p><img src="index_files/figure-html/fig-banda-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figura&nbsp;1: Incertidumbre de calibración</figcaption>
 </figure>
 </div>
 </div>
@@ -244,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>En el centro de la curva se minimiza la incertidumbre de calibración</p>
 </blockquote>
-<p>Si obervamos la ecuación @ref(eq:ux0) podemos minimizar <span class="math inline">\(u(x_{0})\)</span>:</p>
+<p>Si obervamos la ecuación <a href="#eq-ux0">3</a> podemos minimizar <span class="math inline">\(u(x_{0})\)</span>:</p>
 <ol type="1">
 <li>Aumentando <span class="math inline">\(n\)</span> el número de calibrantes.</li>
 <li>Aumentando <span class="math inline">\(m_{0}\)</span></li>
@@ -253,12 +251,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="aplicación-a-un-caso-real" class="level1">
 <h1>Aplicación a un caso “real”</h1>
-<p>La tabla @ref(tab:tabla) muestra los datos de una curva de calibración para la determinación de cobre en mineral por AAS, la figura @ref(fig:cal) describe el gráfico de calibración:</p>
-<p>{{% callout note %}} Alguien capo en HTML/CSS que me ayude a poner tabla enfrentada con figura en 2 columnas por favor… y que Dios se lo pague. {{% /callout %}}</p>
+<p>La tabla <a href="#tbl-tabla">1</a> muestra los datos de una curva de calibración para la determinación de cobre en mineral por AAS, la figura <a href="#fig-cal">2</a> describe el gráfico de calibración:</p>
 <div class="cell">
 <div class="cell-output-display">
+<div id="tbl-tabla" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Curva de Calibración Cu</caption>
+<caption>Tabla&nbsp;1: Curva de alibración</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">Cu [ppm]</th>
@@ -308,22 +306,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
+</div>
 
 
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-cal" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/cal-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Curva de calibración</figcaption>
+<p><img src="index_files/figure-html/fig-cal-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figura&nbsp;2: Curva de calibración</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Ok, hay varias formas de implementar los cálculos de incertidumbre de calibración de la ecuación @ref(eq:ux0). Podríamos utilizar Excel para obtener cada uno de los términos, pero eso lo ilustraremos en otro post. En esta oportunidad utilizaremos el software <code>R</code>. Este software posee varias librerías o packages especializados en el cálculo de incertidumbre en química analítica, por ejemplo: <code>metRology</code> y <code>chemCal</code>. En este post utilizaremos el segundo, pues entrega en forma directa el cálculo de la incertidumbre de calibración:</p>
-<p>{{% callout warning %}} Si no tienes instalado el package <code>chemCal</code> utiliza el comando <code>install.packages('chemCal')</code>. Una vez instalado procede con el siguiente código.{{% /callout %}}</p>
+<p>Ok, hay varias formas de implementar los cálculos de incertidumbre de calibración de la ecuación <a href="#eq-ux0">3</a>. Podríamos utilizar Excel para obtener cada uno de los términos, pero eso lo ilustraremos en otro post. En esta oportunidad utilizaremos el software <code>R</code>. Este software posee varias librerías o packages especializados en el cálculo de incertidumbre en química analítica, por ejemplo: <code>metRology</code> y <code>chemCal</code>. En este post utilizaremos el segundo, pues entrega en forma directa el cálculo de la incertidumbre de calibración:</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Atención">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Atención
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si no tienes instalado el package <code>chemCal</code> utiliza el comando <code>install.packages('chemCal')</code>. Una vez instalado procede con el siguiente código.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creación del modelo de calibración lineal, al que llamaremos fit.lin </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (En otro post se profundizará sobre otros modelos de calibración en R)</span></span>
@@ -362,7 +373,7 @@ $`Confidence Limits`
 <p>Bien, interpretemos la salida:</p>
 <ul>
 <li><code>$Prediction</code> es la concentración de la muestra problema en [ppm]</li>
-<li><code>$Standard Error</code> es la incertidumbre estándar de calibración, es decir, la que se obtiene de la ecuación @ref(eq:ux0) expresada, obviamente, en las mismas unidades que los calibrantes [ppm].</li>
+<li><code>$Standard Error</code> es la incertidumbre estándar de calibración, es decir, la que se obtiene de la ecuación <a href="#eq-ux0">3</a> expresada, obviamente, en las mismas unidades que los calibrantes [ppm].</li>
 <li><code>$Confidence</code> es la incertidumbre expandida de calibración <span class="math inline">\(U(x0)\)</span>, es decir, <span class="math inline">\(U(x0) = k\cdot u(x0)\)</span> donde <span class="math inline">\(k\)</span> es el factor de cobertura con el cual se obtiene un intervalo de incertidumbre con cierta confianza (habitualmente 95%). Más de esto en otro post.</li>
 <li><code>$Confidence Limits</code> es simplemente <span class="math inline">\(x0 \pm U(x0)\)</span>, es decir, <span class="math inline">\(5 \pm 0.6\)</span> ppm (ojo con las cifras significativas… ahí va otro post).</li>
 </ul>
@@ -374,7 +385,19 @@ $`Confidence Limits`
 <li><p>Si, además, el método analítico incluye pesada de la muestra, digestión o extracción, aforo final, factor de dilución, etc. Ud.debe, mediante los mandamientos de la guía GUM, combinar todas estas fuentes de incertidumbre con la de calibración <span class="math inline">\(u(x0)\)</span>.</p></li>
 <li><p>En el fondo, como se asume que los calibrantes no tienen incertidumbre, <span class="math inline">\(u(x0)\)</span> reflejaría el comportamiento aleatorio del instrumento cuando se lee la curva “muchas” veces, siempre con los mismos calibrantes. En cada oportunidad, se obtendría una pendiente e intercepto distintos (debido a al error aleatorio <span class="math inline">\(\epsilon\)</span>), por lo tanto, también una concentración <span class="math inline">\(x0\)</span> distinta cada vez.</p></li>
 </ol>
-<p>{{% callout warning %}} Si está interesad@ en estimar la incertidumbre de una calibración no lineal, lo discutimos paso a paso en el <a href="https://www.analytical.cl/post/incertidumbre-de-una-calibracion-no-lineal/">siguiente link.</a> {{% /callout %}}</p>
+<div class="callout callout-style-default callout-note callout-titled" title="¿Quiere saber más?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Quiere saber más?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si está interesad@ en estimar la incertidumbre de una calibración no lineal, lo discutimos paso a paso en el <a href="https://www.analytical.cl/post/incertidumbre-de-una-calibracion-no-lineal/">siguiente link.</a></p>
+</div>
+</div>
 <p>Bueno espero que este post, en rodaje áun, haya sido de su agrado. Como siempre, siéntase libre de criticarlo. Nos vemos.</p>
 
 
