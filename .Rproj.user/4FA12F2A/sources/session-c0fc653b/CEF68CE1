@@ -3,24 +3,24 @@
     "path": "C:/Users/cvgom/OneDrive/Analytical/Pagina_Web/website_analytical/index.qmd",
     "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "4109657833",
+    "hash": "0",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1704900138158.0,
     "source_on_save": false,
     "relative_order": 4,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "30,0",
-        "scrollLine": "21"
+        "cursorPosition": "48,0",
+        "scrollLine": "26"
     },
     "folds": "",
-    "lastKnownWriteTime": 1704900566,
+    "lastKnownWriteTime": 1704900814,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1704900579323,
+    "last_content_update": 1704900814452,
     "read_only": false,
     "read_only_alternatives": []
 }
