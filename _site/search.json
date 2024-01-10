@@ -4,14 +4,14 @@
     "href": "test2.html",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.08596344"
+    "text": "mean(rnorm(100))\n\n[1] 0.09819931"
   },
   {
     "objectID": "test2.html#cómo-estás",
     "href": "test2.html#cómo-estás",
     "title": "test2",
     "section": "",
-    "text": "mean(rnorm(100))\n\n[1] 0.08596344"
+    "text": "mean(rnorm(100))\n\n[1] 0.09819931"
   },
   {
     "objectID": "post/validacion-calculos-incertidumbre-quimica-analitica-metodo-monte-carlo/index.html",
@@ -116,7 +116,7 @@
     "href": "index.html#metrología-química",
     "title": "<strong>Analytical</strong>",
     "section": "Metrología Química",
-    "text": "Metrología Química\n\nEstimación de incertidumbre de medición en Química y Microbiología ISO-GUM\nEstimación de incertidumbre por Método de Monte Carlo\nValidación de métodos analíticos\nMétodos primarios de medición (IDMS)\nEvaluación de ensayos de intercomparación ISO 13528\nCertificación de materiales de referencia"
+    "text": "Metrología Química\n\nEstimación de incertidumbre en Química y Microbiología ISO-GUM\nEstimación de incertidumbre por Método de Monte Carlo\nValidación de métodos analíticos\nMétodos primarios de medición (IDMS)\nEvaluación de ensayos de intercomparación ISO 13528\nCertificación de materiales de referencia"
   },
   {
     "objectID": "index.html#estadística-aplicada-en-química",

@@ -31,7 +31,7 @@ _Extraer la mayor cantidad de información de sus datos analíticos a través de
 
 ## Metrología Química
 
-- Estimación de incertidumbre de medición en Química y Microbiología ISO-GUM
+- Estimación de incertidumbre en Química y Microbiología ISO-GUM
 - Estimación de incertidumbre por Método de Monte Carlo
 - Validación de métodos analíticos
 - Métodos primarios de medición (IDMS)
