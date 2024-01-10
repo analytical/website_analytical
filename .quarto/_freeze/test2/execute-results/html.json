@@ -1,7 +1,7 @@
 {
   "hash": "d67a1967bc747fcf16d3a989bed9b63b",
   "result": {
-    "markdown": "---\ntitle: \"test2\"\neditor: visual\n---\n\n\n# Hola\n\n\n## Cómo estás\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmean(rnorm(100))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] -0.07351238\n```\n:::\n:::\n",
+    "markdown": "---\ntitle: \"test2\"\neditor: visual\n---\n\n\n# Hola\n\n\n## Cómo estás\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmean(rnorm(100))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] -0.04089131\n```\n:::\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
