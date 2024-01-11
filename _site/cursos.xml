@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>&lt;strong&gt;Analytical&lt;/strong&gt;</title>
-<link>https://www.metrologiaquimica.cl/cursos.html</link>
-<atom:link href="https://www.metrologiaquimica.cl/cursos.xml" rel="self" type="application/rss+xml"/>
+<link>https://www.analytical.cl/cursos.html</link>
+<atom:link href="https://www.analytical.cl/cursos.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.433</generator>
-<lastBuildDate>Thu, 11 Jan 2024 14:33:47 GMT</lastBuildDate>
+<lastBuildDate>Thu, 11 Jan 2024 16:15:01 GMT</lastBuildDate>
 <item>
   <title>Herramientas de Diseño e Interpretación Estadística de las Mediciones</title>
-  <link>https://www.metrologiaquimica.cl/cursos/DAIO_uchile/index.html</link>
+  <link>https://www.analytical.cl/cursos/DAIO_uchile/index.html</link>
   <description><![CDATA[ 
 
 
@@ -43,7 +43,7 @@
 <p><span style="color:#F74464;"><strong>Más información:</strong></span></p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="https://www.postgradoquimica.cl/curso-posgrado-herramientas-diseno-interpretacion-estadistica-mediciones-version-semipresencial-2/"><img src="https://www.metrologiaquimica.cl/cursos/DAIO_uchile/logo_uchile.png" style="width:20.0%;height:20.0%" class="figure-img"></a></p>
+<p><a href="https://www.postgradoquimica.cl/curso-posgrado-herramientas-diseno-interpretacion-estadistica-mediciones-version-semipresencial-2/"><img src="https://www.analytical.cl/cursos/DAIO_uchile/logo_uchile.png" style="width:20.0%;height:20.0%" class="figure-img"></a></p>
 </figure>
 </div>
 
@@ -52,9 +52,9 @@
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
-  <guid>https://www.metrologiaquimica.cl/cursos/DAIO_uchile/index.html</guid>
-  <pubDate>Thu, 11 Jan 2024 14:33:47 GMT</pubDate>
-  <media:content url="https://www.metrologiaquimica.cl/cursos/DAIO_uchile/daio.png" medium="image" type="image/png" height="195" width="144"/>
+  <guid>https://www.analytical.cl/cursos/DAIO_uchile/index.html</guid>
+  <pubDate>Thu, 11 Jan 2024 16:15:01 GMT</pubDate>
+  <media:content url="https://www.analytical.cl/cursos/DAIO_uchile/daio.png" medium="image" type="image/png" height="195" width="144"/>
 </item>
 </channel>
 </rss>
