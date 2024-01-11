@@ -241,24 +241,32 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p>Morris Bader “A systematic approach to standard addition methods in instrumental analysis” <em>J. Chem. Educ., 1980, 57 (10), p 703</em></p>
 </blockquote>
-<p>El método consiste en añadir cantidades conocidas del analito en solvente puro o solución ácida a volúmenes iguales de matriz. Finalmente, medir la respuesta instrumental en una serie de adiciones crecientes tal como lo muestra la figura @ref(fig:mosaplot):</p>
+<p>El método consiste en añadir cantidades conocidas del analito en solvente puro o solución ácida a volúmenes iguales de matriz. Finalmente, medir la respuesta instrumental en una serie de adiciones crecientes tal como lo muestra la figura <a href="#fig-mosaplot" class="quarto-xref">1</a>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="mosaplot.png" class="img-fluid figure-img" width="1238"></p>
-<figcaption>Diseño experimental de la adición conocida. Cortesía de Lins4y via Wikimedia Commons</figcaption>
+<div id="fig-mosaplot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mosaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mosaplot.png" class="img-fluid figure-img" width="1238">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mosaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Diseño experimental de la adición conocida. Cortesía de Lins4y via Wikimedia Commons
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Es necesario que las adiciones de analito generen, en conjunto con la cantidad de analito presente en la muestra original, una concentración tal que aún se encuentre en el rango lineal de calibración. De esta forma se otiene una curva tal como se observa en la figura @ref(fig:adicion):</p>
+<p>Es necesario que las adiciones de analito generen, en conjunto con la cantidad de analito presente en la muestra original, una concentración tal que aún se encuentre en el rango lineal de calibración. De esta forma se otiene una curva tal como se observa en la figura <a href="#fig-adicion" class="quarto-xref">2</a>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="c0adicion.png" class="img-fluid figure-img" width="316"></p>
-<figcaption>Preparación curva método de adición conocida</figcaption>
+<div id="fig-adicion" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adicion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="c0adicion.png" class="img-fluid figure-img" width="316">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adicion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Preparación curva método de adición conocida
+</figcaption>
 </figure>
 </div>
 </div>
@@ -269,18 +277,16 @@ window.Quarto = {
     (\#eq:calib)
 \end{equation}\]</span></p>
 <p>donde se asumen los mismos supuestos que discutimos en el caso de la calibración lineal estándar(en solvente puro) y que puede recordar en este <a href="https://www.analytical.cl/post/como-demuestro-que-mi-curva-de-calibracion-es-lineal/">post</a>.</p>
-<p>La concentración de la muestra problema <span class="math inline">\(C_{0}\)</span> se obtiene a partir de la ecuación @ref(eq:c0):</p>
-<p><span class="math display">\[\begin{equation}
+<p>La concentración de la muestra problema <span class="math inline">\(C_{0}\)</span> se obtiene a partir de la ecuación <a href="#eq-c0" class="quarto-xref">1</a>:</p>
+<p><span id="eq-c0"><span class="math display">\[
   C_{0} = \frac{\beta_{0}}{\beta_{1}}
-  (\#eq:c0)
-\end{equation}\]</span></p>
+\tag{1}\]</span></span></p>
 <p>La incertidumbre de la concentración de la muestra problema <span class="math inline">\(u(C_{0})\)</span> se calcula a partir de la ecuación:</p>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-uc0"><span class="math display">\[
   u(C_{0}) = \frac{\sigma_{y/x}}{\beta_{1}}
   \sqrt{\frac{1}{n} + \frac{\overline{y}^2}
   {\beta_{1}\sum_{i}^{n} (x_{i} - \overline{x})^2}}
-    (\#eq:uc0)
-\end{equation}\]</span></p>
+\tag{2}\]</span></span></p>
 <p>donde:</p>
 <ul>
 <li><span class="math inline">\(\sigma_{y/x}\)</span> es la desviación estándar del error aleatorio <span class="math inline">\(\epsilon\)</span></li>
@@ -294,34 +300,46 @@ window.Quarto = {
 <li>La muestra original sin adición (<span class="math inline">\(x = 0\)</span>)</li>
 <li>El extremo superior del rango lineal</li>
 </ul>
-<p>Por ejemplo, si por alguna razón se tuvieran que preparar <span class="math inline">\(n = 6\)</span> adiciones, lo que indica la ecuación @ref(eq:uc0), es que sería mejor preparar tres puntos sin adición (<span class="math inline">\(x = 0\)</span>) y tres en el extremos superior del rango lineal, tal como lo demuestra la figura @ref(fig:doe)</p>
+<p>Por ejemplo, si por alguna razón se tuvieran que preparar <span class="math inline">\(n = 6\)</span> adiciones, lo que indica la ecuación <a href="#eq-uc0" class="quarto-xref">2</a>, es que sería mejor preparar tres puntos sin adición (<span class="math inline">\(x = 0\)</span>) y tres en el extremos superior del rango lineal, tal como lo demuestra la figura <a href="#fig-doe" class="quarto-xref">3</a></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="doeadicion.png" class="img-fluid figure-img" width="299"></p>
-<figcaption>Diseño de una curva de calibración con adición conocida para minimizar la incertidumbre</figcaption>
+<div id="fig-doe" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-doe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="doeadicion.png" class="img-fluid figure-img" width="299">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-doe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Diseño de una curva de calibración con adición conocida para minimizar la incertidumbre
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Para evaluar estadísticamente si existe un efecto matriz debemos comparar la curva de calibración estándar (es decir, en solvente orgánico o en solución ácida) con la curva de adición conocida. Si las pendientes de ambas curvas son “iguales” podemos afirmar que no hay evidencia de efecto matriz tal como se muestra en la figura @ref(fig:sinefecto). De modo contrario, si las pendientes de ambas curvas difieren, entonces, existe un efecto matriz significativo, tal como lo indica la figura @ref(fig:conefecto):</p>
+<p>Para evaluar estadísticamente si existe un efecto matriz debemos comparar la curva de calibración estándar (es decir, en solvente orgánico o en solución ácida) con la curva de adición conocida. Si las pendientes de ambas curvas son “iguales” podemos afirmar que no hay evidencia de efecto matriz tal como se muestra en la figura <a href="#fig-sinefecto" class="quarto-xref">4</a>. De modo contrario, si las pendientes de ambas curvas difieren, entonces, existe un efecto matriz significativo, tal como lo indica la figura <a href="#fig-conefecto" class="quarto-xref">5</a>:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="sinefecto.png" class="img-fluid figure-img" width="490"></p>
-<figcaption>Sin efecto matriz: calibración estándar v/s adición conocida</figcaption>
+<div id="fig-sinefecto" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sinefecto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="sinefecto.png" class="img-fluid figure-img" width="490">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sinefecto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Sin efecto matriz: calibración estándar v/s adición conocida
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="conefecto.png" class="img-fluid figure-img" width="489"></p>
-<figcaption>Con efecto matriz: calibración estándar v/s adición conocida</figcaption>
+<div id="fig-conefecto" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-conefecto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="conefecto.png" class="img-fluid figure-img" width="489">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-conefecto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Con efecto matriz: calibración estándar v/s adición conocida
+</figcaption>
 </figure>
 </div>
 </div>
@@ -341,13 +359,17 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>Note que en la caso de la calibración estándar, las unidades de concentración están expresadas como <span class="math inline">\(\mu\)</span>g de clorpirifos por mL de solvente. En cambio, en los datos de adición conocida están expresadas como <span class="math inline">\(\mu\)</span>g de clorpirifos añadidos en los mL de muestra original. Por lo tanto, <span class="math inline">\(X = 0\, \mu\text{g}/\text{mL}_{\text{vino}}\)</span> representa la muestra sin adición. La figura @ref(fig:mosa) muestra las curvas de calibración correspondientes.</p>
+<p>Note que en la caso de la calibración estándar, las unidades de concentración están expresadas como <span class="math inline">\(\mu\)</span>g de clorpirifos por mL de solvente. En cambio, en los datos de adición conocida están expresadas como <span class="math inline">\(\mu\)</span>g de clorpirifos añadidos en los mL de muestra original. Por lo tanto, <span class="math inline">\(X = 0\, \mu\text{g}/\text{mL}_{\text{vino}}\)</span> representa la muestra sin adición. La figura <a href="#fig-mosa" class="quarto-xref">6</a> muestra las curvas de calibración correspondientes.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="mosa.png" class="img-fluid figure-img" width="517"></p>
-<figcaption>Curvas de calibración</figcaption>
+<div id="fig-mosa" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mosa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mosa.png" class="img-fluid figure-img" width="517">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mosa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Curvas de calibración
+</figcaption>
 </figure>
 </div>
 </div>

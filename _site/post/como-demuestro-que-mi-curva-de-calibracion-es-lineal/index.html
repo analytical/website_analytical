@@ -256,12 +256,11 @@ window.Quarto = {
 <li>La edad de las ganadoras de Miss América con los asesinatos utilizando objetos calientes y vapor. ¡Cuidado con las correlaciones <a href="http://tylervigen.com/spurious-correlations">espurias</a>!</li>
 </ul>
 <p>Todos los químicos estamos familiarizados con la ecuación de Lambert-Beer, la cual establece la archiconocida relación entre absorbancia y concentración en métodos espectrofotométricos:</p>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-lambert"><span class="math display">\[
   \underbrace{A}_\text{y} = \underbrace{\epsilon \cdot b}_\text{$\beta_{1}$} \cdot
   \underbrace{C}_\text{x}
-    (\#eq:lambert)
-\end{equation}\]</span></p>
-<p>De la ecuación @ref(eq:lambert) se observa claramente la relación con el modelo estándar de calibración lineal <span class="math inline">\(y = \beta_{0} + \beta_{1}x\)</span> asumiendo un intercepto <span class="math inline">\(\beta_{0} = 0\)</span>. Por lo tanto ¿por qué nos sorprende tanto encontrar un coeficiente de correlación alto en curvas de calibración espectrofotométricas? Era totalmente esperable, pues hay un modelo físico-químico que sustenta el modelo lineal.</p>
+\tag{1}\]</span></span></p>
+<p>De la ecuación <a href="#eq-lambert" class="quarto-xref">1</a> se observa claramente la relación con el modelo estándar de calibración lineal <span class="math inline">\(y = \beta_{0} + \beta_{1}x\)</span> asumiendo un intercepto <span class="math inline">\(\beta_{0} = 0\)</span>. Por lo tanto ¿por qué nos sorprende tanto encontrar un coeficiente de correlación alto en curvas de calibración espectrofotométricas? Era totalmente esperable, pues hay un modelo físico-químico que sustenta el modelo lineal.</p>
 <p>OK, de acuerdo. Este modelo físico-químico sólo es válido bajo ciertas condiciones (como todos los modelos), de hecho son conocidas las desviaciones de la ley de Lambert-Beer a altas concentraciones.</p>
 </section>
 <section id="derribando-el-mito-del-r-0999" class="level1">
@@ -270,29 +269,37 @@ window.Quarto = {
 <p>¿No me cree? Le dejo este <a href="https://1drv.ms/x/s!AuF6FPVWruwDyKxMLQ2ngb99Eo3q7w?e=5jIW6e">link</a> para que descargue los datos en archivo Excel y se convenza con sus propios ojos.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/anscombe-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>El Cuarteto de Ascombe</figcaption>
+<div id="fig-anscombe" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-anscombe-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: El Cuarteto de Ascombe
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>El punto que revela la figura @ref(fig:anscombe) es que es posible obtener coeficientes de correlación “altos” inclusive con datos que, a simpe vista, no revelan una relación lineal entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Es más, es posible obtener un alto coeficiente de correlación donde no existe absolutamente ninguna correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> mediante un mal de diseño de la curva de calibración. Por ejemplo, en la figura @ref(fig:influyente) se muestra a la izquierda que la correlación entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> es prácticamente 0. Sin embargo, cuando incluimos un punto <em>influyente</em>, muy alejado de la nube de puntos a baja concentración, mágicamente el r = 1 (derecha).</p>
+<p>El punto que revela la figura <a href="#fig-anscombe" class="quarto-xref">1</a> es que es posible obtener coeficientes de correlación “altos” inclusive con datos que, a simpe vista, no revelan una relación lineal entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>. Es más, es posible obtener un alto coeficiente de correlación donde no existe absolutamente ninguna correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> mediante un mal de diseño de la curva de calibración. Por ejemplo, en la figura <a href="#fig-influyente" class="quarto-xref">2</a> se muestra a la izquierda que la correlación entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> es prácticamente 0. Sin embargo, cuando incluimos un punto <em>influyente</em>, muy alejado de la nube de puntos a baja concentración, mágicamente el r = 1 (derecha).</p>
 <blockquote class="blockquote">
 <p><em>Moraleja:</em> Trate, en lo posible, de diseñar la curva con los puntos equiespaciados y evite los saltos de varios órdenes de magnitud de la concentración.</p>
 </blockquote>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/influyente-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Punto inlfuyente en la calibración</figcaption>
+<div id="fig-influyente" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-influyente-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-influyente-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-influyente-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Punto inlfuyente en la calibración
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La linealidad tampoco es un parámetro cuantitativo, una curva con r = 0,999 no es más lineal que otra con r = 0,99. Observe la figura @ref(fig:simplot), ambas curvas fueron simuladas en lenguaje <code>R</code> con el mismo intercepto y pendiente siguiendo estrictamente el modelo lineal <span class="math inline">\(y = \beta_{0} + \beta_{1}x\)</span>, sin embargo, tienen coeficientes de correlación distintos. La curva de la izquierda no es más lineal que la de la derecha ya que ambas fueron simuladas a partir del mismo modelo, la única diferencia es que la de la derecha tiene una mayor dispersión de los puntos, pero no por ello es “menos lineal”, de hecho ambas lo son, pues fueron simuladas.</p>
+<p>La linealidad tampoco es un parámetro cuantitativo, una curva con r = 0,999 no es más lineal que otra con r = 0,99. Observe la figura <a href="#fig-simplot" class="quarto-xref">3</a>, ambas curvas fueron simuladas en lenguaje <code>R</code> con el mismo intercepto y pendiente siguiendo estrictamente el modelo lineal <span class="math inline">\(y = \beta_{0} + \beta_{1}x\)</span>, sin embargo, tienen coeficientes de correlación distintos. La curva de la izquierda no es más lineal que la de la derecha ya que ambas fueron simuladas a partir del mismo modelo, la única diferencia es que la de la derecha tiene una mayor dispersión de los puntos, pero no por ello es “menos lineal”, de hecho ambas lo son, pues fueron simuladas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Es para que Ud. obtenga los mismos </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="co"># resultados en su simulación en R</span></span>
@@ -311,10 +318,14 @@ window.Quarto = {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/simplot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Simulación de curvas perfectamente lineales</figcaption>
+<div id="fig-simplot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-simplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-simplot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-simplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Simulación de curvas perfectamente lineales
+</figcaption>
 </figure>
 </div>
 </div>
@@ -342,11 +353,16 @@ window.Quarto = {
 <p>Pero tienen que ser replicados verdaderos. No es válido inyectar varias veces el mismo estándar en el equipo. Prepárelos independientemente.</p>
 </blockquote>
 <p>Si los dos estimadores del error aleatorio son similares, entonces el modelo de calibración que acabamos de ajustar es adecuado para modelar los datos experimentales. ¿Cuán similares tienen que ser? Lo probaremos con un test F. Los detalles algebraicos son latosos-engorrosos y pueden ser consultados en la bibliografía. Sólo indicaremos cómo hacer este test de linealidad en lenguaje <code>R</code>, como no. (¿Y en Excel cuándo?)</p>
-<p>La tabla @ref(tab:lof) muestra los datos de calibración de cloranfenicol en matriz leche obtenida por GC/MS-NCI (<em>Gas Chromatography/Mass Spectrometry - Negative Chemical Ionization</em> …¡Qué tiempos aquellos!). Note que cada nivel de calibración está preparado en triplicado totalizando n = 15 calibrantes independientes. La figura @ref(fig:lofplot) muestra la curva de calibración.</p>
+<p>La tabla <a href="#tbl-lof" class="quarto-xref">1</a> muestra los datos de calibración de cloranfenicol en matriz leche obtenida por GC/MS-NCI (<em>Gas Chromatography/Mass Spectrometry - Negative Chemical Ionization</em> …¡Qué tiempos aquellos!). Note que cada nivel de calibración está preparado en triplicado totalizando n = 15 calibrantes independientes. La figura <a href="#fig-lofplot" class="quarto-xref">4</a> muestra la curva de calibración.</p>
 <div class="cell">
+<div id="tbl-lof" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lof-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Calibración CAF [ug/kg]
+</figcaption>
+<div aria-describedby="tbl-lof-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Calibración CAF [ug/kg]</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">Replicado</th>
@@ -388,17 +404,24 @@ window.Quarto = {
 
 </div>
 </div>
+</figure>
+</div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/lofplot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Curva de calibración CAF. Test de carencia de ajuste</figcaption>
+<div id="fig-lofplot" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lofplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-lofplot-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lofplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Curva de calibración CAF. Test de carencia de ajuste
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La tabla @ref(tab:lofcal) muestra el análisis estadístico de esta calibración:</p>
+<p>La tabla <a href="#tbl-lofcal" class="quarto-xref">2</a> muestra el análisis estadístico de esta calibración:</p>
 <!-- Ancho de las tabla -->
 <style type="text/css">
 .table {
@@ -408,9 +431,14 @@ window.Quarto = {
 }
 </style>
 <div class="cell">
+<div id="tbl-lofcal" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-lofcal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2: Pendiente e intercepto de calibración
+</figcaption>
+<div aria-describedby="tbl-lofcal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Pendiente e intercepto de calibración</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -441,10 +469,23 @@ window.Quarto = {
 
 </div>
 </div>
-<p>Por ahora no nos detendremos en el análisis de la tabla (eso quedará para otro post). Haremos directamente el Test de Carencia de Ajuste (<em>lack of fit</em>) en <code>R</code> el cual se muestra en la tabla @ref(tab:loftest):</p>
-<div class="cell">
+</figure>
+</div>
+</div>
+<p>Por ahora no nos detendremos en el análisis de la tabla (eso quedará para otro post). Haremos directamente el Test de Carencia de Ajuste (<em>lack of fit</em>) en <code>R</code> el cual se muestra en la tabla <a href="#tbl-lofalr3" class="quarto-xref">3</a>:</p>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(olsrr) <span class="co"># Cargamos el package 'olsrr' para aplicar el test lack-of-fit</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ols_pure_error_anova</span>(fit.cal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-lofalr3" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-lofalr3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;3
+</figcaption>
+<div aria-describedby="tbl-lofalr3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output cell-output-stdout">
+
+</div>
+</div>
+</figure>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -494,26 +535,23 @@ Residual        13        392485.57         30191.20
 <ol type="1">
 <li>Primero calcule la suma de cuadrados de los residuos <span class="math inline">\(SS_{r}\)</span> para cada uno de los modelos de acuerdo a la siguiente expresión:</li>
 </ol>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-res"><span class="math display">\[
   SS_{r} = \sum_{i = 1}^{n} e_{i}^2
-    (\#eq:res)
-\end{equation}\]</span></p>
-<p>Donde el residuo <span class="math inline">\(e = y - \hat{y}\)</span>. <span class="math inline">\(y\)</span> es la respuesta instrumental observada o experimental (áreas, absorbancias, etc.); <span class="math inline">\(\hat{y}\)</span>, es la respuesta instrumental que predice el modelo (lineal o o cuadrático) en cada una de las concentraciones de los calibrantes. Si observa la ecuación @ref(eq:res) el concepto de residuo es el mismo para cualquier modelo de calibración, es decir, ¿cuánto difiere lo que se observa experimentalmente con lo que predice el modelo?</p>
+\tag{2}\]</span></span></p>
+<p>Donde el residuo <span class="math inline">\(e = y - \hat{y}\)</span>. <span class="math inline">\(y\)</span> es la respuesta instrumental observada o experimental (áreas, absorbancias, etc.); <span class="math inline">\(\hat{y}\)</span>, es la respuesta instrumental que predice el modelo (lineal o o cuadrático) en cada una de las concentraciones de los calibrantes. Si observa la ecuación <a href="#eq-res" class="quarto-xref">2</a> el concepto de residuo es el mismo para cualquier modelo de calibración, es decir, ¿cuánto difiere lo que se observa experimentalmente con lo que predice el modelo?</p>
 <p>Un buen modelo tiene residuos pequeños. Un residuo grande para cierto de nivel de concentración implica que existe una gran diferencia entre lo observado y lo que predice el modelo, por lo tanto, nos guiará (en otro post) a detectar posibles valores anómalos o <em>outliers</em>.</p>
 <ol start="2" type="1">
 <li>Calcule la diferencia entre ambas sumas de cuadrado de los residuos, la del modelo no lineal <span class="math inline">\(SS_{r}^{no-lin}\)</span> y la correspondiente al modelo lineal <span class="math inline">\(SS_{r}^{lin}\)</span>:</li>
 </ol>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-D"><span class="math display">\[
   D = SS_{r}^{no-lin} -  SS_{r}^{lin}
-  (\#eq:D)
-\end{equation}\]</span></p>
+\tag{3}\]</span></span></p>
 <ol start="3" type="1">
 <li>Estime el estadístico F calculado:</li>
 </ol>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-F"><span class="math display">\[
   F = \frac{D}{SS_{r}^{no-lin}/(n - 3)}
-  (\#eq:D)
-\end{equation}\]</span></p>
+\tag{4}\]</span></span></p>
 <ol start="3" type="1">
 <li><p>Obtenga el F de tabla para 1 grado de libertad en el numerador y <span class="math inline">\(n - 3\)</span> para el denominador</p></li>
 <li><p>Compare el <span class="math inline">\(F_{calculado}\)</span> con el <span class="math inline">\(F_{tabla}\)</span> y decida en base a la siguiente regla:</p></li>
@@ -523,11 +561,16 @@ Residual        13        392485.57         30191.20
 <li><p>Si <span class="math inline">\(F_{calculado} &gt; F_{tabla}\)</span> se rechaza la hipótesis nula de linealidad del modelo. Los datos no son consistentes con la hipótesis. Y aquí se abre una caja de Pandora, pues esta conclusión también tiene muchas consideraciones estadísticas que se deben tener en cuenta para interpretarla apropiadamente las cuales, por ahora, no profundizaremos.</p></li>
 </ul>
 <p>Los pasos recién descritos son para llevar a cabo el Test de Mandel “a mano”, afortunadamente los softwares estadísticos como <code>R</code> y Excel (sí ¡Excel!) tienen incorporada esta prueba estadística de linealidad. Veamos un ejemplo.</p>
-<p>La tabla @ref(tab:datamandel) muestra los datos de calibración de Cu por AAS; la figura @ref(fig:plotmandel), la curva de calibración:</p>
+<p>La tabla <a href="#tbl-datamandel" class="quarto-xref">4</a> muestra los datos de calibración de Cu por AAS; la figura <a href="#fig-plotmandel" class="quarto-xref">5</a>, la curva de calibración:</p>
 <div class="cell">
+<div id="tbl-datamandel" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datamandel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;4: Curva de Calibración Cu
+</figcaption>
+<div aria-describedby="tbl-datamandel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Curva de Calibración Cu</caption>
+<table class="table do-not-create-environment cell table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">0</th>
@@ -563,12 +606,19 @@ Residual        13        392485.57         30191.20
 
 </div>
 </div>
+</figure>
+</div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/plotmandel-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Curva de calibración Cu</figcaption>
+<div id="fig-plotmandel" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plotmandel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-plotmandel-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plotmandel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Curva de calibración Cu
+</figcaption>
 </figure>
 </div>
 </div>

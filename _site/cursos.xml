@@ -10,7 +10,7 @@
 <atom:link href="https://www.analytical.cl/cursos.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.541</generator>
-<lastBuildDate>Thu, 11 Jan 2024 18:57:42 GMT</lastBuildDate>
+<lastBuildDate>Thu, 11 Jan 2024 20:09:45 GMT</lastBuildDate>
 <item>
   <title>Herramientas de Diseño e Interpretación Estadística de las Mediciones</title>
   <link>https://www.analytical.cl/cursos/DAIO_uchile/</link>
@@ -54,7 +54,7 @@
 
 <a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> ]]></description>
   <guid>https://www.analytical.cl/cursos/DAIO_uchile/</guid>
-  <pubDate>Thu, 11 Jan 2024 18:57:42 GMT</pubDate>
+  <pubDate>Thu, 11 Jan 2024 20:09:45 GMT</pubDate>
   <media:content url="https://www.analytical.cl/cursos/DAIO_uchile/daio.png" medium="image" type="image/png" height="195" width="144"/>
 </item>
 </channel>
