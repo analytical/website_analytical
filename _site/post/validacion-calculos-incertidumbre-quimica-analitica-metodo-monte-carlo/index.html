@@ -306,30 +306,35 @@ la misma media (<span class="math inline">\(\mu\)</span>) y varianza (<span clas
 <section id="método-gum" class="level2">
 <h2 class="anchored" data-anchor-id="método-gum">Método GUM</h2>
 <p>Este es un ejercicio bastante simple para el método GUM, pues el factor de dilución es una operación de división, por lo que aplicando las reglas de propagación de la incertidumbre de una división, obtenemos lo siguiente:</p>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-f"><span class="math display">\[
   u_{f} = f\sqrt{\left(\frac{u_{V_{final}}}{V_{final}}\right)^2 +
   \left(\frac{u_{V_{inicial}}}{V_{incial}}\right)^2}
-  (\#eq:f)
-\end{equation}\]</span></p>
-<p>Asumiremos por simplicidad que las incertidumbres asociadas al material volumétrico son las indicadas por el fabricante en el mismo material, es decir, de acuerdo a la figura @ref(fig:matraz) y, por ahora, serán las únicas fuentes de incertidumbre del material volumétrico (olvidaremos la T° y la repetibilidad).</p>
+\tag{1}\]</span></span></p>
+<p>Asumiremos por simplicidad que las incertidumbres asociadas al material volumétrico son las indicadas por el fabricante en el mismo material, es decir, de acuerdo a la figura <a href="#fig-matraz" class="quarto-xref">1</a> y, por ahora, serán las únicas fuentes de incertidumbre del material volumétrico (olvidaremos la T° y la repetibilidad).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="pipeta.jpg" class="img-fluid figure-img" width="84"></p>
-<figcaption>Incertidumbre del fabricante</figcaption>
+<div id="fig-matraz" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-matraz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pipeta.jpg" class="img-fluid figure-img" width="84">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-matraz-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Incertidumbre del fabricante
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Ahora bien, las incertidumbres del material volumétrico corresponden a incertidumbres expandidas <span class="math inline">\(U\)</span>, por lo tanto, debemos convertirlas a incertidumbres estándares antes de aplicar la ecuación @ref(eq:f). También por simplicidad, modelaremos los volúmenes mediante una distribución rectangular, por lo tanto, al estandarizar <span class="math inline">\(u = U/k\)</span>, con <span class="math inline">\(k = \sqrt{3}\)</span> obtenemos lo siguiente:</p>
-<p><span class="math display">\[\begin{eqnarray}
+<p>Ahora bien, las incertidumbres del material volumétrico corresponden a incertidumbres expandidas <span class="math inline">\(U\)</span>, por lo tanto, debemos convertirlas a incertidumbres estándares antes de aplicar la ecuación <a href="#eq-f" class="quarto-xref">1</a>. También por simplicidad, modelaremos los volúmenes mediante una distribución rectangular, por lo tanto, al estandarizar <span class="math inline">\(u = U/k\)</span>, con <span class="math inline">\(k = \sqrt{3}\)</span> obtenemos lo siguiente:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
   u_{V_{final}} &amp;=&amp; \frac{0,6}{\sqrt{3}} = 0.35\, \text{mL}\\
   u_{V_{incial}} &amp;=&amp; \frac{0,1}{\sqrt{3}} = 0.06\, \text{mL}\\
   u_{f} &amp;=&amp; \frac{100}{20}\sqrt{\left(\frac{0.35}{100}\right)^2 +
   \left(\frac{0.06}{20}\right)^2} \\
     u_{f} &amp;=&amp;  0.02255
-\end{eqnarray}\]</span></p>
+\end{eqnarray}
+\]</span></p>
 <p>En este ejemplo, podemos asumir que los grados de libertad de ambas incertidumbres tienden a infinito, por lo tanto, si queremos obtener la incertidumbre expandida del factor de dilución con un 95% de confianza, se asume un factor de cobertura <span class="math inline">\(k = 2\)</span>, de esta forma obtenemos <span class="math inline">\(U_{f} = ku_{f} = 0.04509\)</span> mL.</p>
 </section>
 <section id="método-de-monte-carlo" class="level2">
@@ -366,26 +371,35 @@ la misma media (<span class="math inline">\(\mu\)</span>) y varianza (<span clas
 <p>“Bueno ¿Y?” se preguntará Ud.</p>
 <p>Veamos que hemos generado con la simulación:</p>
 <ol type="1">
-<li><span class="math inline">\(n = 1000\)</span> valores aleatorios del volumen inicial a partir de una distribución rectangular con media <code>vi</code> = 20 mL e incertidumbre expandida <code>Uvi</code> = 0.1 mL. El promedio de los 1000 volumenes iniciales simulados es 19.999 mL y una desviación estándar de <code>uvi</code> = <span class="math inline">\(U_{vf}/\sqrt{3} = 0.058\)</span> mL. La figura @ref(fig:visim) muestra el histograma de los valores simulados. Note que la simulación concuerda perfectamente con los valores de incertidumbre informados por el fabricante (<span class="math inline">\(20 \pm 0.1\)</span> mL).</li>
+<li><span class="math inline">\(n = 1000\)</span> valores aleatorios del volumen inicial a partir de una distribución rectangular con media <code>vi</code> = 20 mL e incertidumbre expandida <code>Uvi</code> = 0.1 mL. El promedio de los 1000 volumenes iniciales simulados es 19.999 mL y una desviación estándar de <code>uvi</code> = <span class="math inline">\(U_{vf}/\sqrt{3} = 0.058\)</span> mL. La figura <a href="#fig-visim" class="quarto-xref">2</a> muestra el histograma de los valores simulados. Note que la simulación concuerda perfectamente con los valores de incertidumbre informados por el fabricante (<span class="math inline">\(20 \pm 0.1\)</span> mL).</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/visim-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Histograma de los valores simulados de volumen inicial [mL]</figcaption>
+<div id="fig-visim" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-visim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-visim-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-visim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Histograma de los valores simulados de volumen inicial [mL]
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <ol start="2" type="1">
 <li><p><span class="math inline">\(n = 1000\)</span> valores aleatorios del volumen final a partir de una distribución rectangular con media <code>vf</code> = 100 mL e incertidumbre expandida <code>Uvf</code> = 0.6 mL.</p></li>
-<li><p>Para cada uno de los pares datos simulados de volumen inicial y final, se calculó el factor de dilución, por lo tanto, se obtuvieron en total <span class="math inline">\(n = 1000\)</span> factores los cuales se “guardaron” en el vector <code>f.sim</code>, tal como se muestra en la tabla @ref(tab:fsim):</p></li>
+<li><p>Para cada uno de los pares datos simulados de volumen inicial y final, se calculó el factor de dilución, por lo tanto, se obtuvieron en total <span class="math inline">\(n = 1000\)</span> factores los cuales se “guardaron” en el vector <code>f.sim</code>, tal como se muestra en la tabla <strong>?@tbl-fsi</strong>:</p></li>
 </ol>
 <div class="cell">
+<div id="tbl-fsim" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-fsim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Variables simuladas. Se muestran los primeros 6 datos
+</figcaption>
+<div aria-describedby="tbl-fsim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<caption>Variables simuladas. Se muestran los primeros 6 datos</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;">vf.sim</th>
@@ -428,35 +442,46 @@ la misma media (<span class="math inline">\(\mu\)</span>) y varianza (<span clas
 </table>
 </div>
 </div>
+</figure>
+</div>
+</div>
 <ol start="4" type="1">
-<li>La figura @ref(fig:fsimhis) muestra el histograma de los 1000 factores de dilución simulados:</li>
+<li>La figura <a href="#fig-fsimhis" class="quarto-xref">3</a> muestra el histograma de los 1000 factores de dilución simulados:</li>
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/fsimhis-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Histograma de factores de dilución simulados</figcaption>
+<div id="fig-fsimhis" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fsimhis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-fsimhis-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fsimhis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Histograma de factores de dilución simulados
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>“¡Qué interesante!”, dirá Ud., la división de dos variables rectangulares genera una distribución de datos que, al menos, es simétrica. ¿Es razonable asumir una distribución normal del factor de dilución simulado? Si recuerda la discusión en este <a href="https://www.analytical.cl/post/mis-datos-no-son-normales/">post</a>, podemos evaluar la admisibilidad de esta hipótesis mediante el análisis gráfico <em>QQ-Plot</em> de normalidad de los datos simulados y el test de Shapiro, el cual se muestra en la figura @ref(fig:fsimnorm).</p>
+<p>“¡Qué interesante!”, dirá Ud., la división de dos variables rectangulares genera una distribución de datos que, al menos, es simétrica. ¿Es razonable asumir una distribución normal del factor de dilución simulado? Si recuerda la discusión en este <a href="https://www.analytical.cl/post/mis-datos-no-son-normales/">post</a>, podemos evaluar la admisibilidad de esta hipótesis mediante el análisis gráfico <em>QQ-Plot</em> de normalidad de los datos simulados y el test de Shapiro, el cual se muestra en la figura <a href="#fig-fsimnorm" class="quarto-xref">4</a>.</p>
 <div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/fsimnorm-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>QQ-Plot de normalidad de los n factores de dilución simulados</figcaption>
-</figure>
-</div>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Shapiro-Wilk normality test
 
 data:  f.sim
 W = 0.99005, p-value = 2.719e-06</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-fsimnorm" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-fsimnorm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-fsimnorm-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fsimnorm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: QQ-Plot de normalidad de los n factores de dilución simulados
+</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <p>Aparentemente, el modelo normal sería razonable para modelar el factor de dilución sino fuera por los siguientes hechos:</p>
@@ -495,7 +520,7 @@ W = 0.99005, p-value = 2.719e-06</code></pre>
 <p>¿Cómo obtenemos los percentiles 2.5 y 97.5 de la simulación de Monte Carlo?</p>
 </blockquote>
 <p>Muy sencillo, con el comando <code>quantile</code>:</p>
-<p>Esto quiere decir, que de los <span class="math inline">\(n = 1000\)</span> datos simulados del factor de dilución, un 95% se encuentra dentro del intervalo [4.96, 5.04]. La figura @ref(fig:quantilofig) muestra este intervalo en el histograma de los datos simulados:</p>
+<p>Esto quiere decir, que de los <span class="math inline">\(n = 1000\)</span> datos simulados del factor de dilución, un 95% se encuentra dentro del intervalo [4.96, 5.04]. La figura <a href="#fig-quantilofig" class="quarto-xref">5</a> muestra este intervalo en el histograma de los datos simulados:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(f.sim, </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">'Factor de dilución'</span>,</span>
@@ -507,10 +532,14 @@ W = 0.99005, p-value = 2.719e-06</code></pre>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> quantilos[<span class="dv">1</span>], <span class="at">col =</span> <span class="st">'red'</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> quantilos[<span class="dv">2</span>], <span class="at">col =</span> <span class="st">'red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/quantilofig-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Intervalo de confianza al 95% de los datos simulados del factor de dilución</figcaption>
+<div id="fig-quantilofig" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quantilofig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-quantilofig-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quantilofig-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Intervalo de confianza al 95% de los datos simulados del factor de dilución
+</figcaption>
 </figure>
 </div>
 </div>

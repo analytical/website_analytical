@@ -257,43 +257,53 @@ window.Quarto = {
 <ol type="1">
 <li>El primer paso para estimar la incertidumbre de este método es escribir la ecuación de medición:</li>
 </ol>
-<p><span class="math display">\[\begin{equation}
-  \text{Cu}[\text{%}]=\frac{\text{C}_{\text{calib}}\cdot V \cdot D}{m\cdot 10000}
-  (\#eq:medicion)
-\end{equation}\]</span></p>
+<p><span id="eq-medicion"><span class="math display">\[
+  \text{Cu}_{[\%]}=\frac{\text{C}_{\text{calib}}\cdot V \cdot D}{m\cdot 10000}
+\tag{1}\]</span></span></p>
 <p>donde <span class="math inline">\(\text{C}_{\text{calib}}\)</span> es la concentración de la muestra digerida interpolada en la curva de calibración <span class="math inline">\([\mu\text{g}\,\text{mL}^{-1}]\)</span>, <span class="math inline">\(m\)</span> es la masa de la muestra [g], <span class="math inline">\(V\,[\text{mL}]\)</span> es el volumen del aforo final y <span class="math inline">\(D\)</span> es un factor de dilución volumétrico, utilizado cuando es necesario. Para simplificar el problema, asumiremos que no hay dilución antes de la lectura por AAS, por lo tanto, <span class="math inline">\(D = 1\)</span> y <span class="math inline">\(u_{D} = 0\)</span>.</p>
 <ol start="2" type="1">
 <li>Identificación de las fuentes de incertidumbre</li>
 </ol>
-<p>A continuación se enumeran las fuentes de incertidumbre asociadas a cada uno de los factores de la ecuación @ref(eq:medicion) y se describe brevemente los métodos estadísticos y de juicio experto utilizados para obtener las incertidumbres estándar correpospondientes:</p>
+<p>A continuación se enumeran las fuentes de incertidumbre asociadas a cada uno de los factores de la ecuación <a href="#eq-medicion" class="quarto-xref">1</a> y se describe brevemente los métodos estadísticos y de juicio experto utilizados para obtener las incertidumbres estándar correpospondientes:</p>
 <ul>
 <li><span class="math inline">\(\text{C}_{\text{calib}}\)</span>: La incertidumbre estándar de la concentración de una muestra problema <span class="math inline">\(u_{\text{C}_\text{calib}}\)</span> obtenida de una curva de calibración lineal <span class="math inline">\(y = a + bx\)</span> es calculada a partir de la siguiente expresión:</li>
 </ul>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 u_{\text{C}_{\text{calib}}}=\frac{s_{y/x}}{b}\sqrt{\frac{1}{m}+\frac{1}{n}+
 \frac{(C_{\text{calib}}-\overline{C})^2}{\sum(C_{i}-\overline{C})^2}}
 \label{eq:ucurva}
-\end{equation}\]</span></p>
+\]</span></p>
 <p>donde <span class="math inline">\(s_{y/x}\)</span> es la desviación estándar de la regresión, <span class="math inline">\(m\)</span> es el número de replicados independientes de la muestra problema efectivamente analizados, <span class="math inline">\(n\)</span> es el número de calibrantes, <span class="math inline">\(C_{\text{calib}}\)</span> es la concentración de la muestra problema obtenida por interpolación en la curva de calibración, <span class="math inline">\(\overline{C}\)</span> es el promedio de la concentraciones de los calibrantes. Estos parámetros pueden ser obtenidos directamente del análisis estadístico de la curva de calibración lineal. Cabe destacar que cuando se utiliza el método de mínimos cuadrados ordinarios para estimar la pendiente e intercepto de la curva, esta metodología no incorpora la incertirtumbre de la concentración de los calibrantes.</p>
-<p>{{% callout warning %}} Puede profundizar sobre la incertidumbre de calibración en el siguiente <a href="https://www.analytical.cl/post/como-calcular-la-incertidumbre-de-una-curva-de-calibracion/">post</a>{{% /callout %}}</p>
+<div class="callout callout-style-default callout-note callout-titled" title="¿Quiere sber más?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Quiere sber más?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Puede profundizar sobre la incertidumbre de calibración en el siguiente <a href="https://www.analytical.cl/post/como-calcular-la-incertidumbre-de-una-curva-de-calibracion/">post</a></p>
+</div>
+</div>
 <ul>
 <li><p><span class="math inline">\(V\)</span>: La incertidumbre del volumen de aforo <span class="math inline">\(u_{\text{V}}\)</span> es estimada a partir de la combinación de tres fuentes:</p>
 <ul>
 <li><p><span class="math inline">\(u_{\text{tol}}\)</span> La incertidumbre informada por el fabricante en el certificado original del lote de producción o aquella impresa en el material de vidrio. Esta incertidumbre es de Tipo B.</p></li>
 <li><p><span class="math inline">\(u_{\text{rep}}\)</span> Incertidumbre debido a la repetibilidad de llenado del aforo del material de vidrio. Esta incertidumbre (Tipo A) es evaluada mediante métodos estadísticos a través de la replicación (<span class="math inline">\(n\)</span>) del llenado del material con agua destilada y el registro gravimétrico de la cantidad de agua. La incertidumbre estándar se expresa como la desviación estándar de los <span class="math inline">\(n\)</span> replicados.</p></li>
-<li><p><span class="math inline">\(u_{\text{temp}}\)</span> La incertidumbre debido a la diferencia de temperatura registrada durante la calibración del material de vidrio y aquella que se registra durante los análisis de rutina. Esta incertidumbre expandida es expresada en la ecuación @ref(eq:uvol):</p></li>
+<li><p><span class="math inline">\(u_{\text{temp}}\)</span> La incertidumbre debido a la diferencia de temperatura registrada durante la calibración del material de vidrio y aquella que se registra durante los análisis de rutina. Esta incertidumbre expandida es expresada en la ecuación <a href="#eq-uvol" class="quarto-xref">2</a>:</p></li>
 </ul></li>
 </ul>
-<p><span class="math display">\[\begin{equation}
+<p><span id="eq-uvol"><span class="math display">\[
   U_{\text{temp}}= V\cdot \gamma_{\text{H}_{2}\text{O}} \cdot \Delta T
-  (\#eq:uvol)
-\end{equation}\]</span></p>
+\tag{2}\]</span></span></p>
 <p>donde <span class="math inline">\(V\)</span> es el volumen certificado del material de vidrio, <span class="math inline">\(\gamma_{\text{H}_{2}\text{O}} = 2.1\cdot 10^{-4}\,\text{°C}^{-1}\)</span> es el coeficiente de expansión del agua y <span class="math inline">\(\Delta T\)</span> es la variabilidad de la temperatura de trabajo del laboratorio en relación a la tempreratura de calibración del material. Finalmente, se obtiene asume una distribución rectangular de la variable obteniéndose una incertidumbre estándar <span class="math inline">\(u_{\text{temp}}=U_{\text{temp}}/\sqrt{3}\)</span> mL.</p>
 <p>Esta expresión debe utilizarse cuando exista un certificado de calibración que informe la temperatura de referencia registrada durante el proceso de certificación el cual puede provenir del mismo fabricante o de alguna institución metrológica nacional que certifique este tipo material. Generalmente la temperatura de calibración se espcifica a 20°C.</p>
 <p>La incertidumbre combinada estándar del volumen del aforo se obtiene a través de la siguiente expresión:</p>
-<p><span class="math display">\[\begin{equation}
+<p><span class="math display">\[
 u_{\text{V}} = \sqrt{u_{\text{tol}}^2+u_{\text{rep}}^2+u_{\text{temp}}^2}
-\end{equation}\]</span></p>
+\]</span></p>
 <ul>
 <li><span class="math inline">\(m\)</span> : La incertidudmbre de la masa de la muestra es obtenida directamente del certificado de la balanza emitido por el nodo de metrología física nacional u otro proveedor de calibración.</li>
 </ul>
@@ -304,18 +314,22 @@ u_{\text{V}} = \sqrt{u_{\text{tol}}^2+u_{\text{rep}}^2+u_{\text{temp}}^2}
 <ol start="4" type="1">
 <li>Cálculo de la incertidumbre combinada total</li>
 </ol>
-<p>Aplicando las directrices de la GUM y en base a la ecuación de medición @ref(eq:medicion), la incertidumbre estándar de la concentración de Cu por este método analítico es obtenida a partir de:</p>
-<p><span class="math display">\[\begin{equation}
+<p>Aplicando las directrices de la GUM y en base a la ecuación de medición <a href="#eq-medicion" class="quarto-xref">1</a>, la incertidumbre estándar de la concentración de Cu por este método analítico es obtenida a partir de:</p>
+<p><span id="eq-ufinal"><span class="math display">\[
 u_{\text{Cu}} = \text{Cu}\sqrt{\left(\frac{u_{\text{C}_\text{calib}}}{\text{C}_{\text{calib}}}\right)^2+
 \left(\frac{u_{\text{m}}}{m}\right)^2+
 \left(\frac{u_{\text{V}}}{V}\right)^2}
-(\#eq:ufinal)
-\end{equation}\]</span></p>
-<p>La tabla @ref(tab:udata) muestra las incertidumbres estándares de cada uno de los componentes de la ecuación @ref(eq:ufinal):</p>
+\tag{3}\]</span></span></p>
+<p>La tabla <a href="#tbl-udata" class="quarto-xref">1</a> muestra las incertidumbres estándares de cada uno de los componentes de la ecuación <a href="#eq-ufinal" class="quarto-xref">3</a>:</p>
 <div class="cell">
+<div id="tbl-udata" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-udata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Valores e incertidumbres estándar de cada componente
+</figcaption>
+<div aria-describedby="tbl-udata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="table table-striped table-sm small" data-quarto-postprocess="true">
-<caption>Valores e incertidumbres estándar de cada componente</caption>
+<table class="table table-striped do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Componente</th>
@@ -349,8 +363,23 @@ u_{\text{Cu}} = \text{Cu}\sqrt{\left(\frac{u_{\text{C}_\text{calib}}}{\text{C}_{
 
 </div>
 </div>
+</figure>
+</div>
+</div>
 <p>Ok, vamos entonces a utilizar la librería <code>metRology</code> para evaluar la incertidumbre del % de Cu.</p>
-<p>{{% callout warning %}} Debe, en primer lugar, instalar la librería mediante el comando <code>install.packages('metRology')</code>{{% /callout %}}</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Atención">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Atención
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Debe, en primer lugar, instalar la librería mediante el comando <code>install.packages('metRology')</code></p>
+</div>
+</div>
 <p>Una vez instalada debe ingresar el siguiente código <code>R</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metRology)  <span class="co"># Carga la librería metRology</span></span>
@@ -429,13 +458,17 @@ m          0.9916 0.00005 -0.351378363 -1.756892e-05
 u(y):  0.006053998 </code></pre>
 </div>
 </div>
-<p>Además de los cálculos de incertidumbre, la opción <code>method = 'GUM'</code> entrega 4 gráficos muy interesantes, siendo el más importante el de <em>Contribuciones combinadas</em>, el cual se muestra en la figura @ref(fig:plotGUM). En este gráfico queda en evidencia que el factor que más aporta a la incertidumbre total (evaluada por GUM) es la curva de calibración.</p>
+<p>Además de los cálculos de incertidumbre, la opción <code>method = 'GUM'</code> entrega 4 gráficos muy interesantes, siendo el más importante el de <em>Contribuciones combinadas</em>, el cual se muestra en la figura <a href="#fig-plotGUM" class="quarto-xref">1</a>. En este gráfico queda en evidencia que el factor que más aporta a la incertidumbre total (evaluada por GUM) es la curva de calibración.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="index_files/figure-html/plotGUM-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Gráfico de contribución a la incertidumbre total</figcaption>
+<div id="fig-plotGUM" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plotGUM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-plotGUM-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plotGUM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Gráfico de contribución a la incertidumbre total
+</figcaption>
 </figure>
 </div>
 </div>
@@ -491,11 +524,16 @@ Monte Carlo evaluation using 10000 replicates:
 </div>
 </div>
 <p>El MMC obtiene <span class="math inline">\(y = 0.3484268\)</span> % Cu y <span class="math inline">\(u(y) = 0.0060466\)</span> % Cu.</p>
-<p>La tabla @ref(tab:comparacion) muestra la comparación de ambas aproximaciones en la estimación de la incertidumbre estándar:</p>
+<p>La tabla <a href="#tbl-comparacion" class="quarto-xref">2</a> muestra la comparación de ambas aproximaciones en la estimación de la incertidumbre estándar:</p>
 <div class="cell">
+<div id="tbl-comparacion" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2: Cuadro comparativo GUM v/s Monte Carlo % Cu
+</figcaption>
+<div aria-describedby="tbl-comparacion-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<caption>Cuadro comparativo GUM v/s Monte Carlo % Cu</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Método</th>
@@ -518,6 +556,9 @@ Monte Carlo evaluation using 10000 replicates:
 </table>
 
 
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p>Note la excelente concordancia entre ambas metodologías <strong>para esta ecuación de medición asumiendo una distribución normal para todas las variables inputs</strong>. En este caso, <em>muy particular</em>, casi sería innecesario validar el método GUM, pero lo haremos de todas maneras para ejemplificar la operación.</p>
