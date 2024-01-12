@@ -1,0 +1,12 @@
+freeze: auto
+page-layout: article
+crossref:
+  eq-prefix: '' 
+  fig-prefix: ''
+  tbl-prefix: ''
+  fig-title: Figura
+  tbl-title: Tabla
+knitr:
+  opts_chunk:
+    warning: false
+    message: false

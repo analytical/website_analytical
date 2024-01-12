@@ -287,7 +287,7 @@ distribución rectangular con media `vf` = `r vf` mL e incertidumbre expandida
 3. Para cada uno de los pares datos simulados de volumen inicial y final, 
 se calculó el factor de dilución, por lo tanto, se obtuvieron en total 
 $n = `r n`$ factores los cuales se "guardaron" en el 
-vector `f.sim`, tal como se muestra en la tabla @tbl-fsi:
+vector `f.sim`, tal como se muestra en la tabla @tbl-fsim:
 
 ```{r tbl-fsim, echo = F, warning=F, message=F}
 
