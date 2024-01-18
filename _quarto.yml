@@ -41,8 +41,8 @@ website:
         file: cursos.qmd
       - text: "Blog"
         file: blog.qmd
-      # - text: "Libro"
-      #   href: "book/index.html"
+      - text: "Libro"
+        href: "book/index.html"
       - text: "Quiénes somos"
         file: about.qmd
   

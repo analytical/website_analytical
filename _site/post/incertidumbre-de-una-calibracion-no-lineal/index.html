@@ -176,6 +176,10 @@ window.Quarto = {
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../book/index.html"> 
+<span class="menu-text">Libro</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Quiénes somos</span></a>
   </li>  
@@ -259,11 +263,11 @@ window.Quarto = {
 <li>etc.</li>
 </ol>
 <p>Por lo tanto, no existe una respuesta completamente correcta desde la prespectiva estadística, pues un modelo cuadrático sería tan válido como un polinomio cúbico. Desde el punto de vista químico podríamos preguntarnos ¿qué sentido químico tiene una curva de calibración polinómica de grado 5? ¿Son interpretables los parámetros del modelo? En un modelo lineal como el de Lambert-Beer: <span class="math inline">\(y = \beta_{0} + \beta_{1}x\)</span> la pendiente de la curva de calibración tiene una interpretación química: es el producto entre coeficiente de extinción molar y la longitud de la celda:</p>
-<p><span class="math display">\[
+<p><span id="eq-lambert"><span class="math display">\[
 \underbrace{A}_\text{y} = \underbrace{\epsilon \cdot b}_\text{$\beta_{1}$} \cdot
 \underbrace{C}_\text{x}
-(\#eq:lambert)
-\]</span> Pero recuerde este sabio consejo de un monstruo de la estadística aplicada:</p>
+\tag{1}\]</span></span></p>
+<p>Pero recuerde este sabio consejo de un monstruo de la estadística aplicada:</p>
 <blockquote class="blockquote">
 <p><em>“All models are wrong, but some are useful”</em> – <cite>George Box</cite></p>
 </blockquote>
