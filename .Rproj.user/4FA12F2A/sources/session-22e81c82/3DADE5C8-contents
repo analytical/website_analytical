@@ -71,7 +71,7 @@ format:
     theme: cosmo
     css: [styles.css, custom.css]
     toc: true
-    # page-layout: full
+    page-layout: article
     # grid:
     #   sidebar-width: 300px
     #   body-width: 1200px
