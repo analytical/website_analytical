@@ -1,7 +1,7 @@
 project:
   type: website
-  resources: 
-    - "book/"
+  # resources: 
+  #   - "book/"
 
 website:
   title: "<strong>Analytical</strong>"
@@ -42,7 +42,8 @@ website:
       - text: "Blog"
         file: blog.qmd
       - text: "Libro"
-        href: "book/index.html"
+        href: "https://metrologiaquimica.cl/"
+        # href: "book/index.html"
       - text: "Quiénes somos"
         file: about.qmd
   
