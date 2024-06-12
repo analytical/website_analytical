@@ -1,13 +1,8 @@
 [
   {
-    "listing": "/cursos.html",
-    "items": [
-      "/cursos/DAIO_uchile/index.html"
-    ]
-  },
-  {
     "listing": "/blog.html",
     "items": [
+      "/post/optimizacion-metodo-analitico/index.html",
       "/post/acreditados-inn-2023/index.html",
       "/post/incertidumbre-de-una-calibracion-no-lineal/index.html",
       "/post/como-detectar-efecto-matriz-metodo-analitico/index.html",
@@ -18,6 +13,12 @@
       "/post/cual-es-la-maxima-diferencia-tolerable-entre-duplicados-de-analisis/index.html",
       "/post/como-demuestro-que-mi-curva-de-calibracion-es-lineal/index.html",
       "/post/como-calcular-incertidumbre-calibracion/index.html"
+    ]
+  },
+  {
+    "listing": "/cursos.html",
+    "items": [
+      "/cursos/DAIO_uchile/index.html"
     ]
   }
 ]

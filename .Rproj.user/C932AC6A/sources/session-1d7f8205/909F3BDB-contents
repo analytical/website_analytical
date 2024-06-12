@@ -1,0 +1,27 @@
+---
+title: ¿Todavía utiliza el método de un-factor-a-la-vez para optimizar una técnica analítica o un proceso?
+date: '2024-06-12'
+---
+
+
+Por ejemplo, si quisiera optimizar, digamos, el rendimiento de una reacción enzimática. Primero varía el pH manteniendo constate la temperatura. Luego mantiene constante el pH optimizado y varía la temperatura, obteniendo finalmente la respuesta "optimizada".
+
+Lamentablemente, este método sólo es aplicable cuando los factores que está estudiando no tienen interacciones, es decir, los efectos son aditivos y no dependen del otro factor.
+
+Pero ¿Cómo saber a priori que los factores no tienen interacciones? En algunos casos sí es posible, quizás por criterio experto. Sin embargo, en otros (la mayoría), no es posible conocer la interacción o no hay modelo teórico lo suficientemente bueno para poder predecir ese comportamiento.
+
+Una excelente herramienta para aplicar en estos casos es el Diseño de Experimentos, especialmente la metodología de superficie de respuesta (RSM). La siguiente figura (izq) es un caso real, que describe la optimización del % de recuperación de un método variando 2 factores: Flujo de acetileno y el flujo de N2O del AAS. 
+
+El diseño experimental que propuse en este caso, permitió variar "simultáneamente" ambos factores, generar el modelo polinómico y optimizar la respuesta estudiada (% de recuperación). La figura de la derecha muestra la zona donde se alcanza una respuesta óptima.
+
+Lo interesante es que el diseño experimental nos indicó que los factores interaccionaban, por lo tanto, si hubiésemos aplicado el método de "un-factor-a-la-vez" (primero Acetileno y luego N$_{2}$O) quizás hubiéramos encontrado una zona sub-óptima.
+
+Consulte a su Estadístico(a) -o mejor aún, a su Quimiometrista - cuál es el diseño experimental apropiado para su aplicación. El/Ella seleccionará el mejor diseño experimental que le permitirá cumplir su objetivo con el mínimo de experimentos.
+
+Al fin y al cabo esa es una de las labores de un(a) Estadístico(a): 
+
+Extraer la mayor cantidad de información utilizando la menor cantidad de recursos posible. 
+Y si además es Quimiometrista, podrá hablar el mismo idioma que Ud. al interpretar los resultados de la optimización: El idioma de la Química.
+
+![](Doe.png)
+
